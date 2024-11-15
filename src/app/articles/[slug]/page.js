@@ -119,7 +119,7 @@ function getMainDomain(host) {
 export async function generateMetadata({ params }) {
   try {
     const { slug } = params;
-    const articleData = await getArticleBySlug(slug, config.token); // 使用配置文件中的token
+    const articleData = await getArticleBySlug(slug, basicConfig.token); // 使用配置文件中的token
     
     if (!articleData?.data?.[0]) {
       return {
