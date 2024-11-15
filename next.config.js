@@ -19,6 +19,15 @@ const nextConfig = {
       ],
     }
   },
+  async redirects() {
+    return [
+      {
+        source: '/:slug',
+        destination: '/articles/:slug',
+        permanent: true,
+      },
+    ]
+  },
   webpack: (config, { dev, isServer }) => {
     // 启用压缩
     config.optimization.minimize = true;
