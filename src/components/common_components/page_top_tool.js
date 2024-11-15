@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomButton from './custom_button';
 import buttonLinks from '../../config/buttonLinks';
+import Image from 'next/image';
 
 const PageTopTool = ({ section, author }) => {
   const topContent = section.topContent;
@@ -10,22 +11,24 @@ const PageTopTool = ({ section, author }) => {
   };
 
   return (
-    <div 
-      className="banner-container w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-cover bg-center bg-no-repeat"
-      style={{ 
-        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(255,255,255,1)), url('/images/kreado-top-bg.png')`,
-        minHeight: '800px'
-      }}
-    >
+    <div className="banner-container w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-cover bg-center bg-no-repeat" style={{ minHeight: '800px' }}>
+      <div className="absolute inset-0">
+        <Image
+          src="/images/kreado-top-bg.png"
+          alt="Background"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-20" />
+      </div>
+
       <div className="relative z-10 pt-32">
         <CustomButton 
           variant="KREADO" 
           href={getButtonLink()}
           className="block mx-auto bg-indigo-100/90 hover:bg-indigo-50 text-indigo-900 font-semibold px-6 rounded-full shadow-sm text-sm h-8 flex items-center gap-2"
         >
-          {/* <svg className="w-4 h-4 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg> */}
           {topContent.buttonText}
         </CustomButton>
       </div>
@@ -63,7 +66,6 @@ const PageTopTool = ({ section, author }) => {
         </div>
       </div>
 
-      {/* 添加底部装饰元素 */}
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/5 to-transparent"></div>
     </div>
   );
