@@ -1,4 +1,4 @@
-import { getArticleBySlug } from '../../../../lib/api';
+import { getArticleBySlug } from '../../../lib/api';
 import { notFound } from 'next/navigation';
 import LayoutKreadoai from '../../../components/kreado/layout_new';
 import { KreadoHeader } from '../../../components/kreado/header_new';
