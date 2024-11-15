@@ -9,26 +9,32 @@ const nextConfig = {
   images: {
     domains: ['pages.zhuyue.tech', 'zhuyue.tech'],
   },
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: '/:path*',
-          has: [
-            {
-              type: 'host',
-              value: 'pages.zhuyue.tech',
-            },
-          ],
-          destination: '/articles/:path*',
-        },
-      ],
-    }
-  },
+  // async rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //       {
+  //         source: '/:path((?!articles/).*)',
+  //         has: [
+  //           {
+  //             type: 'host',
+  //             value: 'pages.zhuyue.tech',
+  //           },
+  //         ],
+  //         destination: '/articles/:path',
+  //       },
+  //     ],
+  //   }
+  // },
   async redirects() {
     return [
       {
         source: '/:slug',
+        has: [
+          {
+            type: 'host',
+            value: 'zhuyue.tech',
+          },
+        ],
         destination: '/articles/:slug',
         permanent: true,
       },
