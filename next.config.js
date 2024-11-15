@@ -12,31 +12,30 @@ const nextConfig = {
   async rewrites() {
     return {
       beforeFiles: [
-        // 删除或注释掉之前的 rewrite 规则
-        // {
-        //   source: '/:path*',
-        //   has: [
-        //     {
-        //       type: 'host',
-        //       value: 'pages.zhuyue.tech',
-        //     },
-        //   ],
-        //   destination: '/articles/:path*',
-        // },
+        {
+          source: '/:slug',
+          has: [
+            {
+              type: 'host',
+              value: 'pages.zhuyue.tech',
+            },
+          ],
+          destination: '/articles/:slug',
+        },
       ],
     }
   },
   async redirects() {
     return [
       {
-        source: '/:slug*',
+        source: '/:slug((?!articles/).*)',
         has: [
           {
             type: 'host',
             value: 'zhuyue.tech',
           },
         ],
-        destination: '/articles/:slug*',
+        destination: '/articles/:slug',
         permanent: true,
       },
     ]
@@ -44,6 +43,12 @@ const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     // 启用压缩
     config.optimization.minimize = true;
+    
+    // 添加生产环境特定优化
+    if (!dev) {
+      config.optimization.concatenateModules = true;
+      config.optimization.aggressiveMerging = true;
+    }
     
     // 排除不需要的语言包
     if (!isServer) {
