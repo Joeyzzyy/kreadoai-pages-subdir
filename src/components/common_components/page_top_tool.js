@@ -14,11 +14,12 @@ const PageTopTool = ({ section, author }) => {
     <div className="banner-container w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-cover bg-center bg-no-repeat" style={{ minHeight: '800px' }}>
       <div className="absolute inset-0">
         <Image
-          src="/images/kreado-top-bg.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/kreado-top-bg.png`}
           alt="Background"
           fill
           priority
           className="object-cover"
+          unoptimized={process.env.NODE_ENV === 'development'}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white opacity-20" />
       </div>
