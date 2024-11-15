@@ -9,33 +9,34 @@ const nextConfig = {
   images: {
     domains: ['pages.zhuyue.tech', 'zhuyue.tech'],
   },
-  // async rewrites() {
-  //   return {
-  //     beforeFiles: [
-  //       {
-  //         source: '/:path((?!articles/).*)',
-  //         has: [
-  //           {
-  //             type: 'host',
-  //             value: 'pages.zhuyue.tech',
-  //           },
-  //         ],
-  //         destination: '/articles/:path',
-  //       },
-  //     ],
-  //   }
-  // },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // 删除或注释掉之前的 rewrite 规则
+        // {
+        //   source: '/:path*',
+        //   has: [
+        //     {
+        //       type: 'host',
+        //       value: 'pages.zhuyue.tech',
+        //     },
+        //   ],
+        //   destination: '/articles/:path*',
+        // },
+      ],
+    }
+  },
   async redirects() {
     return [
       {
-        source: '/:slug',
+        source: '/:slug*',
         has: [
           {
             type: 'host',
             value: 'zhuyue.tech',
           },
         ],
-        destination: '/articles/:slug',
+        destination: '/articles/:slug*',
         permanent: true,
       },
     ]
