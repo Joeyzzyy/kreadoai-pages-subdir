@@ -7,7 +7,8 @@ const webpack = require('webpack');
 const nextConfig = {
   transpilePackages: ['antd'],
   images: {
-    domains: ['pages.zhuyue.tech', 'zhuyue.tech'],
+    domains: ['zhuyue.tech', 'pages.zhuyue.tech'],
+    unoptimized: true,
   },
   async rewrites() {
     return {
@@ -28,7 +29,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:slug((?!articles/).*)',
+        source: '/:slug((?!articles/).+)',
         has: [
           {
             type: 'host',
@@ -36,6 +37,17 @@ const nextConfig = {
           },
         ],
         destination: '/articles/:slug',
+        permanent: true,
+      },
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'zhuyue.tech',
+          },
+        ],
+        destination: '/articles',
         permanent: true,
       },
     ]
@@ -70,5 +82,5 @@ const nextConfig = {
   },
 }
 
-// 使用 withBundleAnalyzer 包装配置
+// 使 withBundleAnalyzer 包装配置
 module.exports = withBundleAnalyzer(nextConfig);
