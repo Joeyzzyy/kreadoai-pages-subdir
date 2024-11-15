@@ -1,0 +1,49 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+const webpack = require('webpack');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ['antd'],
+  images: {
+    domains: [],
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/articles/:path*',
+          destination: '/articles/:path*',
+        },
+      ],
+    }
+  },
+  webpack: (config, { dev, isServer }) => {
+    // 启用压缩
+    config.optimization.minimize = true;
+    
+    // 排除不需要的语言包
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.ContextReplacementPlugin(
+          /moment[/\\]locale$/,
+          /zh-cn/
+        )
+      );
+    }
+
+    // 优化模块解析
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    };
+
+    return config;
+  },
+}
+
+// 使用 withBundleAnalyzer 包装配置
+module.exports = withBundleAnalyzer(nextConfig);
