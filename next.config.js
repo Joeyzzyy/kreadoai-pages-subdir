@@ -41,16 +41,14 @@ const nextConfig = {
     ]
   },
   webpack: (config, { dev, isServer }) => {
-    // 启用压缩
-    config.optimization.minimize = true;
-    
     // 添加生产环境特定优化
     if (!dev) {
-      config.optimization.concatenateModules = true;
-      config.optimization.aggressiveMerging = true;
+      // 这些优化选项也由 Next.js 自动处理，可以移除
+      // config.optimization.concatenateModules = true;
+      // config.optimization.aggressiveMerging = true;
     }
     
-    // 排除不需要的语言包
+    // 保留 moment locale 优化
     if (!isServer) {
       config.plugins.push(
         new webpack.ContextReplacementPlugin(
