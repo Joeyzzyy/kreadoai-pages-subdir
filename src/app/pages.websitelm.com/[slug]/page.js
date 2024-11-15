@@ -84,7 +84,7 @@ function getMainDomain(host) {
 export async function generateMetadata({ params }) {
   try {
     const { slug } = params;
-    const articleData = await getArticleBySlug(slug, config.token);
+    const articleData = await getArticleBySlug(slug, basicConfig.token);
     
     if (!articleData?.data?.[0]) {
       return {
