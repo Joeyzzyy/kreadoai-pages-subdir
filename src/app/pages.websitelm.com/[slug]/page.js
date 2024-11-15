@@ -5,7 +5,7 @@ import { KreadoHeader } from '../../../components/kreado/header_new';
 import { KreadoFooter } from '../../../components/kreado/footer_new';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import config from '../../../config/basicConfig';
+import basicConfig from '../../../config/basicConfig';
 
 // 添加这个配置来启用动态路由
 export const dynamic = 'force-dynamic'
