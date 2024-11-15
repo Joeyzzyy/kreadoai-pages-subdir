@@ -1,11 +1,11 @@
 import { getArticleBySlug } from '../../../../lib/api';
 import { notFound } from 'next/navigation';
-import LayoutKreadoai from '../../../../components/kreado/layout_new';
-import { KreadoHeader } from '../../../../components/kreado/header_new';
-import { KreadoFooter } from '../../../../components/kreado/footer_new';
+import LayoutKreadoai from '../../../components/kreado/layout_new';
+import { KreadoHeader } from '../../../components/kreado/header_new';
+import { KreadoFooter } from '../../../components/kreado/footer_new';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import config from '../../../config/config';
+import config from '../../../config/basicConfig';
 
 // 添加这个配置来启用动态路由
 export const dynamic = 'force-dynamic'
@@ -30,7 +30,7 @@ const KREADO_METADATA = {
 // 主页面组件
 export default async function ArticlePage({ params }) {
   const { slug } = params;
-  const articleData = await getArticleBySlug(slug, config.token);
+  const articleData = await getArticleBySlug(slug, basicConfig.token);
 
   if (!articleData?.data?.[0]) {
     notFound();
@@ -57,7 +57,7 @@ export default async function ArticlePage({ params }) {
 
   // 简化生产环境验证
   const mainDomain = getMainDomain(host);
-  if (article.author !== 'KREADO' || !config.domains.includes(mainDomain)) {
+  if (article.author !== 'KREADO' || !basicConfig.domains.includes(mainDomain)) {
     redirect('/unauthorized');
   }
 
