@@ -23,7 +23,16 @@ const KREADO_LAYOUT = {
 // 添加一个新的常量映射来存储不同作者的元数据配置
 const KREADO_METADATA = {
   title: 'KreadoAI',
-  icon: '/icons/kreado-logo.ico',
+  icons: {
+    icon: [
+      { 
+        url: '/icons/kreado-logo.ico',
+        type: 'image/x-icon'
+      }
+    ],
+    shortcut: '/icons/kreado-logo.ico',
+    apple: '/icons/kreado-logo.ico',
+  },
   defaultDescription: 'AI Creation Generates Multilingual Videos'
 };
 
@@ -103,11 +112,7 @@ export async function generateMetadata({ params }) {
       description: article.description || authorConfig.defaultDescription,
       keywords: `${article.keywords || '默认关键字'}`,
       robots: 'index, follow',
-      icons: {
-        icon: authorConfig.icon,
-        shortcut: authorConfig.icon,
-        apple: authorConfig.icon,
-      },
+      icons: authorConfig.icons,
     };
   } catch (error) {
     console.error('Error generating metadata:', error);
