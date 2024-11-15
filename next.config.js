@@ -27,30 +27,7 @@ const nextConfig = {
     }
   },
   async redirects() {
-    return [
-      {
-        source: '/:slug((?!articles/).+)',
-        has: [
-          {
-            type: 'host',
-            value: 'zhuyue.tech',
-          },
-        ],
-        destination: '/articles/:slug',
-        permanent: true,
-      },
-      {
-        source: '/',
-        has: [
-          {
-            type: 'host',
-            value: 'zhuyue.tech',
-          },
-        ],
-        destination: '/articles',
-        permanent: true,
-      },
-    ]
+    return []
   },
   webpack: (config, { dev, isServer }) => {
     // 添加生产环境特定优化
