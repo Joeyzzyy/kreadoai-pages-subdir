@@ -7,13 +7,19 @@ const webpack = require('webpack');
 const nextConfig = {
   transpilePackages: ['antd'],
   images: {
-    domains: [],
+    domains: ['pages.zhuyue.tech', 'zhuyue.tech'],
   },
   async rewrites() {
     return {
       beforeFiles: [
         {
-          source: '/articles/:path*',
+          source: '/:path*',
+          has: [
+            {
+              type: 'host',
+              value: 'pages.zhuyue.tech',
+            },
+          ],
           destination: '/articles/:path*',
         },
       ],
