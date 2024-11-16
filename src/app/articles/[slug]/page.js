@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }) {
     }
 
     // 简化生产环境验证
-    if (article.author !== 'KREADOAI' && article.publishStatus !== 'publish') {
+    if (article.author !== 'KREADOAI' || article.publishStatus !== 'publish') {
       redirect('/unauthorized');
     }
 
