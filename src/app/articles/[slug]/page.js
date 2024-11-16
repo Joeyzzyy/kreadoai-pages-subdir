@@ -163,7 +163,7 @@ export async function generateMetadata({ params }) {
       description: article.description || authorConfig.defaultDescription,
       keywords: `${article.keywords || '默认关键字'}`,
       robots: 'index, follow',
-      icons: authorConfig.icons,,
+      icons: authorConfig.icons,
       openGraph: {
         title: `${authorConfig.title} - ${article.title}`,
         description: article.description,
