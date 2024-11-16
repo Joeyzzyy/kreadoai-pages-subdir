@@ -18,7 +18,7 @@ const nextConfig = {
       {
         source: '/articles/:slug*',
         destination: `https://${DOMAIN}/articles/:slug*`,
-        basePath: false,
+        // 移除 basePath: false
       },
     ];
   },
@@ -45,7 +45,7 @@ const nextConfig = {
         ],
         destination: `https://${DOMAIN}/:path*?redirected=1`,
         permanent: false,
-        basePath: false,
+        // 移除 basePath: false
       },
     ];
   },
