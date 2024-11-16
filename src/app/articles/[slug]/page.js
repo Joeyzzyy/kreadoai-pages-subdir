@@ -28,11 +28,22 @@ const KREADO_METADATA = {
     icon: [
       { 
         url: '/icons/kreado-logo.ico',
+        sizes: 'any',
         type: 'image/x-icon'
       }
     ],
-    shortcut: '/icons/kreado-logo.ico',
-    apple: '/icons/kreado-logo.ico',
+    shortcut: [
+      {
+        url: '/icons/kreado-logo.ico',
+        type: 'image/x-icon'
+      }
+    ],
+    apple: [
+      {
+        url: '/icons/kreado-logo.ico',
+        type: 'image/x-icon'
+      }
+    ]
   }
 };
 
@@ -152,7 +163,7 @@ export async function generateMetadata({ params }) {
       description: article.description || authorConfig.defaultDescription,
       keywords: `${article.keywords || '默认关键字'}`,
       robots: 'index, follow',
-      icons: authorConfig.icons,
+      icons: authorConfig.icons,,
       openGraph: {
         title: `${authorConfig.title} - ${article.title}`,
         description: article.description,
