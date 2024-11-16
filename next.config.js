@@ -9,17 +9,6 @@ const nextConfig = {
     domains: isLocal ? [] : [DOMAIN],
     unoptimized: true,
   },
-  async rewrites() {
-    if (isLocal) {
-      return [];
-    }
-    return [
-      {
-        source: '/articles/:slug*',
-        destination: `https://${DOMAIN}/articles/:slug*`
-      }
-    ];
-  },
   async redirects() {
     if (isLocal) {
       return [];
