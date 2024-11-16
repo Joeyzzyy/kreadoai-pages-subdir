@@ -1,5 +1,5 @@
 const authorStyles = {
-  KREADO: {
+  KREADOAI: {
     h1: {
       fontSize: 'text-4xl',
       fontWeight: 'font-bold',

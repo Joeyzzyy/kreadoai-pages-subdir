@@ -7,7 +7,7 @@ const TitleTopPricingDown = ({ data, author }) => {
   const { title, bottomContent } = data;
   
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   return (

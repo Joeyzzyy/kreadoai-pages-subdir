@@ -99,7 +99,6 @@ export default async function ArticlePage({ params }) {
     }
 
     // 简化生产环境验证
-    const mainDomain = getMainDomain(host); // 获取主域名
     if (article.author !== 'KREADO') {
       redirect('/unauthorized');
     }

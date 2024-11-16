@@ -8,7 +8,7 @@ const TitleLeftModulesRight = ({ section, author }) => {
   const { leftContent, rightContent } = section;
   
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   const getModuleStyle = (index) => {

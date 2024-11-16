@@ -27,20 +27,15 @@ const TitleTopTwoModulesDown = ({ section, author }) => {
   // 获取图片源地址
   const getImageSrc = (imagePath, index) => {
     // KREADO 作者使用特定的演示图片
-    if (author === 'KREADO') {
-      return `/images/kreado-demo-pic${index + 1}.png`;
-    }
-    // HIXAI 作者使用特定的演示图片
-    if (author === 'HIXAI') {
-      return `/images/hix-demo-pic${index + 1}.png`;
-    }
+    return `/images/kreado-demo-pic${index + 1}.png`;
+
     // 其他作者使用原有的图片验证逻辑
-    return (imagePath && validImages[imagePath]) ? imagePath : '/images/placeholder.png';
+    // return (imagePath && validImages[imagePath]) ? imagePath : '/images/placeholder.png';
   };
 
   // 获取作者对应的workbench链接
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   const { topContent, bottomContent } = section;

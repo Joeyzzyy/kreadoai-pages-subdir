@@ -10,16 +10,12 @@ const nextConfig = {
       {
         source: '/articles/:slug*',
         destination: `https://${process.env.DOMAIN}/articles/:slug*`,
-        basePath: false
-      },
-      {
-        source: '/:path*',
-        destination: `https://${process.env.DOMAIN}/:path*`,
         basePath: false,
         has: [
           {
-            type: 'query',
-            key: 'path',
+            type: 'header',
+            key: 'x-rewrite',
+            missing: true
           }
         ]
       }

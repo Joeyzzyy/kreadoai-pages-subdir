@@ -8,7 +8,7 @@ const PageTopTool = ({ section, author }) => {
   const topContent = section.topContent;
 
   const getButtonLink = () => {
-    return buttonLinks['KREADO']?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://zhuyue.tech';

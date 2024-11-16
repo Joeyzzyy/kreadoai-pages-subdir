@@ -34,6 +34,7 @@ const COMPONENT_MAP = {
 };
 
 const LayoutKoreadoai = ({ article, keywords }) => {
+  console.log('heyheyheyarticle: ', article);
   const sections = article?.sections || [];
   const author = article?.author || 'default';
 

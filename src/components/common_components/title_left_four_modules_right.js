@@ -7,7 +7,7 @@ import buttonLinks from '../../config/buttonLinks';
 
 const TitleLeftFourModulesRight = ({ section, author }) => {
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   const getModuleStyle = (colorKey) => {

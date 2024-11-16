@@ -38,7 +38,7 @@ const TitleRightTableLeft = ({ section, author }) => {
   const styles = authorStyles[author];
 
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
 
   return (

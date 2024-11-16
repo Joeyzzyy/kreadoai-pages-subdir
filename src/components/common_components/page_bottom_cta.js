@@ -6,16 +6,12 @@ import buttonLinks from '../../config/buttonLinks';
 
 const PageDownCTA = ({ section, author }) => {
   const styles = authorStyles[author];
-  const isKreado = author === 'KREADO';
-  const headerBackground = isKreado 
-    ? '/images/kreado-header-bg.png'
-    : '/images/hix-down-bg.png';
+  const headerBackground = '/images/kreado-header-bg.png';
+  const paragraphColorClass = 'text-white';
 
-const paragraphColorClass = isKreado ? 'text-white' : styles.paragraph.color;
-
-const getButtonLink = () => {
-  return buttonLinks[author]?.workbench || '#';
-};
+  const getButtonLink = () => {
+    return buttonLinks.workbench || '#';
+  };
 
   return (
     <div 

@@ -9,7 +9,7 @@ const TitleTopThreeFlowDown = ({ section, author }) => {
   const { bottomContent, topContent } = section;
   
   const getButtonLink = () => {
-    return buttonLinks[author]?.workbench || '#';
+    return buttonLinks.workbench || '#';
   };
   
   return (
