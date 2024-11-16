@@ -11,42 +11,25 @@ const nextConfig = {
   },
   async rewrites() {
     if (isLocal) {
-      // 本地开发环境，禁用 rewrites
       return [];
     }
     return [
       {
         source: '/articles/:slug*',
-        destination: `https://${DOMAIN}/articles/:slug*`,
-        // 移除 basePath: false
-      },
+        destination: `https://${DOMAIN}/articles/:slug*`
+      }
     ];
   },
   async redirects() {
     if (isLocal) {
-      // 本地开发环境，禁用 redirects
       return [];
     }
     return [
       {
-        source: '/:path((?!articles/).*)',
-        has: [
-          {
-            type: 'header',
-            key: 'x-forwarded-host',
-            value: DOMAIN,
-          },
-          {
-            type: 'query',
-            key: 'redirected',
-            value: '1',
-            negate: true,
-          },
-        ],
-        destination: `https://${DOMAIN}/:path*?redirected=1`,
-        permanent: false,
-        // 移除 basePath: false
-      },
+        source: '/:path*',
+        destination: `https://${DOMAIN}/:path*`,
+        permanent: false
+      }
     ];
   },
 };
