@@ -11,13 +11,13 @@ const nextConfig = {
         source: '/articles/:slug*',
         destination: `https://${process.env.DOMAIN}/articles/:slug*`,
         basePath: false,
-        has: [
-          {
-            type: 'header',
-            key: 'x-rewrite',
-            missing: true
-          }
-        ]
+        // has: [
+        //   {
+        //     type: 'header',
+        //     key: 'x-rewrite',
+        //     missing: true
+        //   }
+        // ]
       }
     ]
   }
