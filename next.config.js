@@ -10,16 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   async redirects() {
-    if (isLocal) {
-      return [];
-    }
-    return [
-      {
-        source: '/:path*',
-        destination: `https://${DOMAIN}/:path*`,
-        permanent: false
-      }
-    ];
+    return [];
   },
 };
 

@@ -11,13 +11,11 @@ const PageTopTool = ({ section, author }) => {
     return buttonLinks.workbench || '#';
   };
 
-  const baseUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://zhuyue.tech';
-
   return (
     <div className="banner-container w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-cover bg-center bg-no-repeat" style={{ minHeight: '800px' }}>
       <div className="absolute inset-0">
         <Image
-          src={`${baseUrl}/images/kreado-top-bg.png`}
+          src="/images/kreado-top-bg.png"
           alt="Background"
           fill
           priority
