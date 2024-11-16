@@ -23,17 +23,28 @@ const KREADO_LAYOUT = {
 // 添加一个新的常量映射来存储不同作者的元数据配置
 const KREADO_METADATA = {
   title: 'KreadoAI',
+  defaultDescription: 'AI Creation Generates Multilingual Videos',
   icons: {
     icon: [
       { 
         url: '/icons/kreado-logo.ico',
+        sizes: 'any',
         type: 'image/x-icon'
       }
     ],
-    shortcut: '/icons/kreado-logo.ico',
-    apple: '/icons/kreado-logo.ico',
-  },
-  defaultDescription: 'AI Creation Generates Multilingual Videos'
+    shortcut: [
+      {
+        url: '/icons/kreado-logo.ico',
+        type: 'image/x-icon'
+      }
+    ],
+    apple: [
+      {
+        url: '/icons/kreado-logo.ico',
+        type: 'image/x-icon'
+      }
+    ]
+  }
 };
 
 // 主页面组件
