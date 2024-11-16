@@ -5,7 +5,6 @@ import { KreadoHeader } from '../../../components/kreado/header_new';
 import { KreadoFooter } from '../../../components/kreado/footer_new';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import basicConfig from '../../../config/siteConfig'; // 引入配置文件
 
 // 在文件顶部添加调试日志
 console.log('Loading page.js file');
@@ -56,25 +55,61 @@ export const revalidate = 3600; // 1小时重新验证一次
 // 主页面组件
 export default async function ArticlePage({ params }) {
   const { slug } = params;
-  const articleData = await getArticleBySlug(slug, basicConfig.token); // 使用配置文件中的token
-
-  if (!articleData?.data?.[0]) {
-    notFound();
-  }
-
-  const article = articleData.data[0];
-  const headersList = headers();
-  const host = headersList.get('host');
   
-  // 本地开发环境检查
-  if (host.includes('localhost') || host.includes('127.0.0.1')) {
+  try {
+    const articleData = await getArticleBySlug(slug, process.env.TOKEN);
+    
+    if (!articleData?.data?.[0]) {
+      return notFound();
+    }
+    
+    const article = articleData.data[0];
+    const headersList = headers();
+    const host = headersList.get('host');
+    
+    // 本地开发环境检查
+    if (host.includes('localhost') || host.includes('127.0.0.1')) {
+      const layout = KREADO_LAYOUT;
+      const { Header, Layout, Footer } = layout;
+      
+      return (
+        <>
+          <Header />
+          {/* 后续记得传入keywords */}
+          <Layout article={article} />
+          <Footer />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": article.title,
+                "description": article.description,
+                "datePublished": article.publishDate,
+                "author": {
+                  "@type": "Organization",
+                  "name": article.author
+                }
+              })
+            }}
+          />
+        </>
+      );
+    }
+
+    // 简化生产环境验证
+    const mainDomain = getMainDomain(host); // 获取主域名
+    if (article.author !== 'KREADO') {
+      redirect('/unauthorized');
+    }
+
     const layout = KREADO_LAYOUT;
     const { Header, Layout, Footer } = layout;
-    
+
     return (
       <>
         <Header />
-        {/* 后续记得传入keywords */}
         <Layout article={article} />
         <Footer />
         <script
@@ -95,40 +130,10 @@ export default async function ArticlePage({ params }) {
         />
       </>
     );
+  } catch (error) {
+    console.error('Error fetching article:', error);
+    return notFound();
   }
-
-  // 简化生产环境验证
-  const mainDomain = getMainDomain(host); // 获取主域名
-  if (article.author !== 'KREADO' || !basicConfig.domains.includes(mainDomain)) {
-    redirect('/unauthorized');
-  }
-
-  const layout = KREADO_LAYOUT;
-  const { Header, Layout, Footer } = layout;
-
-  return (
-    <>
-      <Header />
-      <Layout article={article} />
-      <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": article.title,
-            "description": article.description,
-            "datePublished": article.publishDate,
-            "author": {
-              "@type": "Organization",
-              "name": article.author
-            }
-          })
-        }}
-      />
-    </>
-  );
 }
 
 // 从host中提取主域名
@@ -146,34 +151,47 @@ export async function generateMetadata({ params }) {
     const { slug } = params;
     console.log('Fetching article data for slug:', slug);
 
-    const articleData = await getArticleBySlug(slug, basicConfig.token);
-    console.log('Article data received:', articleData?.data?.[0] ? 'success' : 'not found');
+    try {
+      const articleData = await getArticleBySlug(slug, process.env.TOKEN);
+      console.log('Article data received:', articleData?.data?.[0] ? 'success' : 'not found');
 
-    if (!articleData?.data?.[0]) {
+      if (!articleData?.data?.[0]) {
+        return {
+          title: 'No Article Found',
+          keywords: 'nokeywords',
+          robots: 'noindex, nofollow'
+        };
+      }
+
+      const article = articleData.data[0];
+      console.log('Building metadata for article:', article.title);
+
+      const authorConfig = KREADO_METADATA;
+
+      const metadata = {
+        title: `${authorConfig.title} - ${article.title}`,
+        description: article.description || authorConfig.defaultDescription,
+        keywords: article.keywords || '默认关键字',
+        robots: 'index, follow',
+        icons: authorConfig.icons
+      };
+
+      console.log('Final metadata:', metadata);
+      return metadata;
+    } catch (error) {
+      console.error('Error fetching article for metadata:', error);
       return {
         title: 'No Article Found',
         keywords: 'nokeywords',
         robots: 'noindex, nofollow'
       };
     }
-
-    const article = articleData.data[0];
-    console.log('Building metadata for article:', article.title);
-
-    const authorConfig = KREADO_METADATA;
-
-    const metadata = {
-      title: `${authorConfig.title} - ${article.title}`,
-      description: article.description || authorConfig.defaultDescription,
-      keywords: article.keywords || '默认关键字',
-      robots: 'index, follow',
-      icons: authorConfig.icons
-    };
-
-    console.log('Final metadata:', metadata);
-    return metadata;
   } catch (error) {
     console.error('Metadata generation error:', error);
-    throw error;
+    return {
+      title: 'Error',
+      keywords: 'nokeywords',
+      robots: 'noindex, nofollow'
+    };
   }
 }

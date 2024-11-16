@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import CustomButton from './custom_button';
 import authorStyles from '../../styles/textStyles';

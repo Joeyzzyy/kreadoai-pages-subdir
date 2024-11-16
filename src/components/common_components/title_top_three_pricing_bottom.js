@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import buttonLinks from '../../config/buttonLinks';
 import CustomButton from './custom_button';

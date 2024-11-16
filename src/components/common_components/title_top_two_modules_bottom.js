@@ -8,7 +8,6 @@ import buttonLinks from '../../config/buttonLinks';
 const TitleTopTwoModulesDown = ({ section, author }) => {
   const styles = authorStyles[author];
 
-  console.log('hey current section is:', section);
   const [validImages, setValidImages] = useState({});
 
   useEffect(() => {

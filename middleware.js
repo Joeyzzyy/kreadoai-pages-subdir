@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server';
 
 // 需要阻止收录的域名列表
 const BLOCKED_DOMAINS = [
-  'websitelm.com',
-  'nextjs-five-khaki-23.vercel.app' // 替换为你的vercel域名
+  'zhuyue.tech',
 ];
 
 export function middleware(request) {
