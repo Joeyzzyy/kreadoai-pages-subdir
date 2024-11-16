@@ -1,5 +1,5 @@
 // customerDomains.js
-const config = {
+const siteConfig = {
     domains: [
         // 'kreadoai.com',
         // 'pages.kreadoai.com',
@@ -11,4 +11,4 @@ const config = {
     token: 'DV4BYXlD5kHtVX5jU86UDB7Z3s0C1JLuD0zviO72ECqZ6FcHElKRVOsAOt9spuDu'
 };
 
-export default config;
+export default siteConfig;

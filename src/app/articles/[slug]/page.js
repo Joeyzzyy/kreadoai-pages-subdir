@@ -5,7 +5,10 @@ import { KreadoHeader } from '../../../components/kreado/header_new';
 import { KreadoFooter } from '../../../components/kreado/footer_new';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import basicConfig from '../../../config/basicConfig'; // 引入配置文件
+import basicConfig from '../../../config/siteConfig'; // 引入配置文件
+
+// 在文件顶部添加调试日志
+console.log('Loading page.js file');
 
 // 添加这个配置来启用动态路由
 export const dynamic = 'force-dynamic'
@@ -137,10 +140,15 @@ function getMainDomain(host) {
 
 // 修改 generateMetadata 函数
 export async function generateMetadata({ params }) {
+  console.log('generateMetadata called with params:', params);
+
   try {
     const { slug } = params;
-    const articleData = await getArticleBySlug(slug, basicConfig.token); // 使用配置文件中的token
-    
+    console.log('Fetching article data for slug:', slug);
+
+    const articleData = await getArticleBySlug(slug, basicConfig.token);
+    console.log('Article data received:', articleData?.data?.[0] ? 'success' : 'not found');
+
     if (!articleData?.data?.[0]) {
       return {
         title: 'No Article Found',
@@ -150,43 +158,22 @@ export async function generateMetadata({ params }) {
     }
 
     const article = articleData.data[0];
-    
+    console.log('Building metadata for article:', article.title);
+
     const authorConfig = KREADO_METADATA;
 
-    const headersList = headers();
-    const host = headersList.get('host');
-    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
-    const canonicalUrl = `${protocol}://${host}/articles/${params.slug}`;
-
-    return {
+    const metadata = {
       title: `${authorConfig.title} - ${article.title}`,
       description: article.description || authorConfig.defaultDescription,
-      keywords: `${article.keywords || '默认关键字'}`,
+      keywords: article.keywords || '默认关键字',
       robots: 'index, follow',
-      icons: authorConfig.icons,
-      openGraph: {
-        title: `${authorConfig.title} - ${article.title}`,
-        description: article.description,
-        type: 'article',
-        images: [article.coverImage],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: `${authorConfig.title} - ${article.title}`,
-        description: article.description,
-        images: [article.coverImage],
-      },
-      alternates: {
-        canonical: canonicalUrl,
-      },
+      icons: authorConfig.icons
     };
+
+    console.log('Final metadata:', metadata);
+    return metadata;
   } catch (error) {
-    console.error('Error generating metadata:', error);
-    return {
-      title: 'Error Loading Article',
-      description: '',
-      keywords: '错误, 加载文章',
-      robots: 'noindex, nofollow'
-    };
+    console.error('Metadata generation error:', error);
+    throw error;
   }
 }

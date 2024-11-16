@@ -1,11 +1,11 @@
-import { getArticleBySlug } from '../../lib/api';
+import { getArticleBySlug } from '../../../lib/api';
 import { notFound } from 'next/navigation';
-import LayoutKreadoai from '../../components/kreado/layout_new';
-import { KreadoHeader } from '../../components/kreado/header_new';
-import { KreadoFooter } from '../../components/kreado/footer_new';
+import LayoutKreadoai from '../../../components/kreado/layout_new';
+import { KreadoHeader } from '../../../components/kreado/header_new';
+import { KreadoFooter } from '../../../components/kreado/footer_new';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import basicConfig from '../../config/siteConfig';
+import basicConfig from '../../../config/siteConfig';
 
 // 添加这个配置来启用动态路由
 export const dynamic = 'force-dynamic'
@@ -23,28 +23,8 @@ const KREADO_LAYOUT = {
 // 添加一个新的常量映射来存储不同作者的元数据配置
 const KREADO_METADATA = {
   title: 'KreadoAI',
-  defaultDescription: 'AI Creation Generates Multilingual Videos',
-  icons: {
-    icon: [
-      { 
-        url: '/icons/kreado-logo.ico',
-        sizes: 'any',
-        type: 'image/x-icon'
-      }
-    ],
-    shortcut: [
-      {
-        url: '/icons/kreado-logo.ico',
-        type: 'image/x-icon'
-      }
-    ],
-    apple: [
-      {
-        url: '/icons/kreado-logo.ico',
-        type: 'image/x-icon'
-      }
-    ]
-  }
+  icon: '/icons/kreado-logo.ico',
+  defaultDescription: 'AI Creation Generates Multilingual Videos'
 };
 
 // 主页面组件
@@ -123,7 +103,11 @@ export async function generateMetadata({ params }) {
       description: article.description || authorConfig.defaultDescription,
       keywords: `${article.keywords || '默认关键字'}`,
       robots: 'index, follow',
-      icons: authorConfig.icons,
+      icons: {
+        icon: authorConfig.icon,
+        shortcut: authorConfig.icon,
+        apple: authorConfig.icon,
+      },
     };
   } catch (error) {
     console.error('Error generating metadata:', error);
