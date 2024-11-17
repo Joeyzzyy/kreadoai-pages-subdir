@@ -1,5 +1,6 @@
 export const exampleData = {
   pageTopTool: {
+    order: 1,
     title: 'Page Top Tool Component',
     description: 'Display main tools and feature introduction at the top of the page',
     recommendedPosition: 'Must be first component if Demo Showcase is not used',
@@ -17,6 +18,7 @@ export const exampleData = {
   },
 
   titleContent: {
+    order: 2,
     title: 'Title Content Component',
     description: 'Display article or page main title and subtitle',
     recommendedPosition: 'Upper section, after Demo Showcase or Page Top Tool',
@@ -28,6 +30,7 @@ export const exampleData = {
   },
 
   titleTopPricing: {
+    order: 3,
     title: 'Top Title + Three Column Pricing Component',
     description: 'Display product pricing plans with three different tiers',
     recommendedPosition: 'Mid to lower section, after feature introduction',
@@ -84,6 +87,7 @@ export const exampleData = {
   },
 
   titleTopThreeFlow: {
+    order: 4,
     title: 'Top Title + Three Step Flow Component',
     description: 'Display product usage process or service steps with arrow indicators',
     recommendedPosition: 'Product introduction page or user guide section',
@@ -114,6 +118,7 @@ export const exampleData = {
   },
 
   titleTopSixModules: {
+    order: 5,
     title: 'Top Title + Six Modules Component',
     description: 'Display product features or service advantages in six-grid layout',
     recommendedPosition: 'Product features introduction area',
@@ -163,6 +168,7 @@ export const exampleData = {
   },
 
   titleRightTable: {
+    order: 6,
     title: 'Right Title + Left Table Component',
     description: 'Display product feature comparison or feature list with right-side title',
     recommendedPosition: 'Product feature comparison page',
@@ -203,6 +209,7 @@ export const exampleData = {
   },
 
   titleLeftFourModules: {
+    order: 7,
     title: 'Left Title + Right Four Modules Component',
     description: 'Display core product features or service highlights in four modules',
     recommendedPosition: 'Product features introduction area',
@@ -242,6 +249,7 @@ export const exampleData = {
   },
 
   titleTopTwoModules: {
+    order: 8,
     title: 'Top Title + Two Modules Component',
     description: 'Display two main product features or service advantages with images',
     recommendedPosition: 'Product features showcase area',
@@ -272,6 +280,7 @@ export const exampleData = {
   },
 
   comparisonTable: {
+    order: 9,
     title: 'Product Comparison Table Component',
     description: 'Display feature comparison between product and competitors',
     recommendedPosition: 'Upper section but not as first component',
@@ -320,6 +329,7 @@ export const exampleData = {
   },
 
   faq: {
+    order: 10,
     title: 'FAQ Component',
     description: 'Display frequently asked questions and answers in two columns',
     recommendedPosition: 'Must be second-to-last component if used',
@@ -350,6 +360,7 @@ export const exampleData = {
   },
 
   articleContent: {
+    order: 11,
     title: 'Article Content Component',
     description: 'Display article main content, supporting titles and paragraphs',
     recommendedPosition: 'Article page main body',
@@ -376,6 +387,7 @@ export const exampleData = {
   },
 
   moreInsights: {
+    order: 12,
     title: 'More Insights Component',
     description: 'Display related articles or insights in four columns',
     recommendedPosition: 'Article bottom or standalone section',
@@ -409,6 +421,7 @@ export const exampleData = {
   },
 
   imageBanner: {
+    order: 13,
     title: 'Image Banner Component',
     description: 'Display large banner image',
     recommendedPosition: 'Within article content or page divider',
@@ -420,6 +433,7 @@ export const exampleData = {
   },
 
   pageDownCTA: {
+    order: 14,
     title: 'Page Bottom CTA Component',
     description: 'Display Call-to-Action content, typically used at page bottom',
     recommendedPosition: 'Must be the last component',

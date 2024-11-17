@@ -27,7 +27,10 @@ const ComponentShowcase = () => {
           <p className="mt-4 text-lg text-slate-600 max-w-3xl">
             Explore our comprehensive collection of pre-built components designed for creating modern, responsive web applications.
           </p>
-        </div>
+          <p className="mt-2 text-base text-slate-500">
+            Currently featuring {Object.keys(exampleData).length} components
+          </p>
+        </div>  
       </div>
 
       {/* Main Content */}
@@ -37,7 +40,10 @@ const ComponentShowcase = () => {
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
               {/* Component Header */}
               <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-4">
-                <h2 className="text-xl font-semibold text-white break-words">{data.title}</h2>
+                <h2 className="text-xl font-semibold text-white break-words">
+                  <span className="mr-2 text-slate-400">#{data.order}</span>
+                  {data.title}
+                </h2>
                 <div className="mt-2 flex flex-wrap items-center gap-4">
                   <p className="text-slate-300 text-sm">
                     <span className="font-medium">Recommended Position:</span> {data.recommendedPosition}
