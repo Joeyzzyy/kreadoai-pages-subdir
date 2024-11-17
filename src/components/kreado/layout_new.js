@@ -53,34 +53,32 @@ const LayoutKoreadoai = ({ article, keywords }) => {
   };
 
   return (
-    <>
-      <div>
-        <div className="content-container relative">
-          <div className="relative z-10">
-            {(() => {
-              // 先分离CTA和普通部分
-              const normalSections = [];
-              let ctaSection = null;
-              
-              sections
-                .sort((a, b) => a.position - b.position)
-                .forEach(section => {
-                  if (section.componentName === 'cta_bottom') {
-                    ctaSection = section;
-                  } else {
-                    normalSections.push(section);
-                  }
-                });
+    <div className="w-full min-h-screen flex flex-col">
+      <div className="content-container relative flex-1">
+        <div className="relative z-10">
+          {(() => {
+            // 先分离CTA和普通部分
+            const normalSections = [];
+            let ctaSection = null;
+            
+            sections
+              .sort((a, b) => a.position - b.position)
+              .forEach(section => {
+                if (section.componentName === 'cta_bottom') {
+                  ctaSection = section;
+                } else {
+                  normalSections.push(section);
+                }
+              });
 
-              // 合并普通部分和CTA部分并渲染
-              return [...normalSections, ...(ctaSection ? [ctaSection] : [])]
-                .map(renderSection);
-            })()}
-          </div>
-          <TableOfContents />
+            // 合并普通部分和CTA部分并渲染
+            return [...normalSections, ...(ctaSection ? [ctaSection] : [])]
+              .map(renderSection);
+          })()}
         </div>
+        <TableOfContents />
       </div>
-    </>
+    </div>
   );
 };
 

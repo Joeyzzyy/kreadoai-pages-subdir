@@ -6,7 +6,7 @@ export default function RootLayout({ children, keywords, robots }) {
       <head>
         <meta name="keywords" content={keywords} />
       </head>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true} style={{ overflowX: 'hidden' }}>{children}</body>
     </html>
   )
 }
