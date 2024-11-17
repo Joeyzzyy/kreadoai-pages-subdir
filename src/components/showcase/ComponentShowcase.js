@@ -40,12 +40,9 @@ const ComponentShowcase = () => {
                 <h2 className="text-xl font-semibold text-white break-words">{data.title}</h2>
                 <div className="mt-2 flex flex-wrap items-center gap-4">
                   <p className="text-slate-300 text-sm">
-                    <span className="font-medium">推荐用途：</span> {data.recommendedPosition}
+                    <span className="font-medium">Recommended Position:</span> {data.recommendedPosition}
                   </p>
                   <div className="hidden sm:block h-4 w-px bg-slate-700"></div>
-                  <p className="text-slate-300 text-sm break-all">
-                    <span className="font-medium">路径：</span> {data.filePath}
-                  </p>
                 </div>
               </div>
 
