@@ -53,9 +53,9 @@ const LayoutKoreadoai = ({ article, keywords }) => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
-      <div className="content-container relative flex-1">
-        <div className="relative z-10">
+    <div className="w-full min-h-screen flex flex-col p-0 m-0">
+      <div className="relative flex-1 w-full max-w-[100vw] overflow-x-hidden p-0 m-0">
+        <div className="relative z-10 w-full">
           {(() => {
             // 先分离CTA和普通部分
             const normalSections = [];

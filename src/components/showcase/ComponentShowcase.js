@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { exampleData } from './example-data';
 import TitleContent from '../common_components/title_content';
 import TitleTopPricingDown from '../common_components/title_top_three_pricing_bottom';
@@ -16,8 +16,26 @@ import ArticleContent from '../common_components/common_article_content';
 import MoreInsights from '../common_components/more_insights';
 import ImageBanner from '../common_components/image_banner';
 import ComparisonTable from '../common_components/product_comparison_table';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const ComponentShowcase = () => {
+  const [expandedCodes, setExpandedCodes] = useState({});
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const componentRefs = {};
+
+  const toggleCode = (key) => {
+    setExpandedCodes(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const scrollToComponent = (key) => {
+    componentRefs[key]?.scrollIntoView({ behavior: 'smooth' });
+    setIsNavOpen(false);
+  };
+
   return (
     <div className="relative min-h-screen bg-slate-50 w-full">
       {/* Header */}
@@ -36,7 +54,7 @@ const ComponentShowcase = () => {
       {/* Main Content */}
       <div className="w-[80%] mx-auto py-12">
         {Object.entries(exampleData).map(([key, data]) => (
-          <div key={key} className="mb-8">
+          <div key={key} className="mb-8" ref={el => componentRefs[key] = el}>
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
               {/* Component Header */}
               <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-6 py-4">
@@ -49,12 +67,31 @@ const ComponentShowcase = () => {
                     <span className="font-medium">Recommended Position:</span> {data.recommendedPosition}
                   </p>
                   <div className="hidden sm:block h-4 w-px bg-slate-700"></div>
+                  <button
+                    onClick={() => toggleCode(key)}
+                    className="text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    {expandedCodes[key] ? 'Hide Data Structure' : 'View Data Structure'}
+                  </button>
                 </div>
               </div>
 
               {/* Component Description */}
               <div className="px-6 py-4 bg-slate-50 border-b border-slate-200">
                 <p className="text-slate-600">{data.description}</p>
+                
+                {/* Data Structure Preview */}
+                {expandedCodes[key] && (
+                  <div className="mt-4 bg-white rounded-lg border border-slate-200">
+                    <SyntaxHighlighter 
+                      language="json"
+                      style={github}
+                      className="text-sm"
+                    >
+                      {JSON.stringify(data.props, null, 2)}
+                    </SyntaxHighlighter>
+                  </div>
+                )}
               </div>
 
               {/* Component Preview */}
@@ -82,6 +119,45 @@ const ComponentShowcase = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 添加悬浮导航菜单 */}
+      <div className="fixed bottom-6 right-6 z-50">
+        {isNavOpen ? (
+          <div className="bg-white rounded-lg shadow-lg p-3 w-[280px]">
+            <div className="flex justify-between items-center mb-2 pb-2 border-b">
+              <h3 className="font-medium text-slate-700 text-sm">组件导航</h3>
+              <button
+                onClick={() => setIsNavOpen(false)}
+                className="text-slate-400 hover:text-slate-600"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+            <div className="max-h-[60vh] overflow-y-auto">
+              {Object.entries(exampleData).map(([key, data]) => (
+                <button
+                  key={key}
+                  onClick={() => scrollToComponent(key)}
+                  className="w-full text-left px-2 py-1.5 text-xs text-slate-600 hover:bg-slate-50 rounded-md"
+                >
+                  {data.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <button
+            onClick={() => setIsNavOpen(true)}
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg transition-all duration-200"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );
