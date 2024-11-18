@@ -102,10 +102,10 @@ const ComponentShowcase = () => {
                 </div>
 
                 {/* Component Preview */}
-                <div className="p-6 overflow-x-auto">
+                <div className="p-0 overflow-x-auto bg-white rounded-b-xl">
                   <div className={`${
                     key === 'heroSectionWithVideo' ? 'max-w-full md:max-w-[900px] lg:max-w-[1200px] mx-auto' : ''
-                  }`}>
+                  } w-full`}>
                     {key === 'titleSection' && <TitleSection {...data.props} author="KREADOAI" />}
                     {key === 'howItWorksWithWorkflow' && <HowItWorksWithWorkflow {...data.props} author="KREADOAI" />}
                     {key === 'howItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks {...data.props} author="KREADOAI" />}
