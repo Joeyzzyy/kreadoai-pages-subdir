@@ -2,7 +2,7 @@
 
 import React from 'react';
 import buttonLinks from '../../config/buttonLinks';
-import CustomButton from './custom_button';
+import CustomButton from './widget-custom_button';
 
 const TitleLeftModulesRight = ({ section, author }) => {
   const { leftContent, rightContent } = section;

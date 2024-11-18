@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { checkImage } from '../../utils/imageUtils';
-import CustomButton from './custom_button';
+import CustomButton from './widget-custom_button';
 import authorStyles from '../../styles/textStyles';
 import buttonLinks from '../../config/buttonLinks';
 

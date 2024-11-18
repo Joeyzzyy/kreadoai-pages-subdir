@@ -1,9 +1,51 @@
+/**
+ * Component Showcase Example Data
+ * 
+ * 组件展示顺序建议：
+ * 1. Hero & Title - 页面顶部核心组件
+ *    - heroSectionWithVideo
+ *    - titleSection
+ * 
+ * 2. Feature & Benefits - 产品特性和优势展示
+ *    - productBenefitsWithFourBlocks
+ *    - whyChooseUsWithSixBlocks
+ *    - whyChooseUsWithTwoBlocks
+ * 
+ * 3. How It Works - 使用流程说明
+ *    - howItWorksWithWorkflow
+ *    - howItWorksWithThreeBlocks
+ * 
+ * 4. Comparison & Tables - 比较和详细信息
+ *    - productComparisonTable
+ *    - callToActionWithTable
+ * 
+ * 5. Content Sections - 内容展示区域
+ *    - textBlock
+ *    - moreInsightsWithFourCards
+ *    - imageBanner
+ * 
+ * 6. Support Sections - 支持信息
+ *    - faqSection
+ *    - pricingWithThreeCards
+ * 
+ * 7. CTA - 行动召唤
+ *    - callToAction
+ * 
+ * 最佳实践：
+ * - Hero Section 通常应该是第一个组件
+ * - CTA Section 通常应该是最后一个组件
+ * - FAQ 和 Pricing 通常放在页面下部
+ * - Feature 相关组件建议放在上部
+ */
+
 export const exampleData = {
-  pageTopTool: {
+  // 1. Hero & Title (页面顶部组件)
+  heroSectionWithVideo: {
     order: 1,
-    title: 'Page Top Tool Component',
-    description: 'Display main tools and feature introduction at the top of the page',
+    title: 'Hero Section With Video',
+    description: 'Display main tools and feature introduction with video background',
     recommendedPosition: 'Must be first component if Demo Showcase is not used',
+    filePath: 'src/components/common_components/hero-section-with-video.js',
     props: {
       author: 'KREADO',
       section: {
@@ -17,11 +59,12 @@ export const exampleData = {
     }
   },
 
-  titleContent: {
+  titleSection: {
     order: 2,
-    title: 'Title Content Component',
+    title: 'Title Section',
     description: 'Display article or page main title and subtitle',
-    recommendedPosition: 'Upper section, after Demo Showcase or Page Top Tool',
+    recommendedPosition: 'Upper section, after Hero Section',
+    filePath: 'src/components/common_components/title_section.js',
     props: {
       title: 'How to Improve Work Efficiency with AI',
       subtitle: 'Explore AI Applications in Daily Work',
@@ -29,191 +72,13 @@ export const exampleData = {
     }
   },
 
-  titleTopPricing: {
+  // 2. Feature & Benefits (产品特性和优势)
+  productBenefitsWithFourBlocks: {
     order: 3,
-    title: 'Top Title + Three Column Pricing Component',
-    description: 'Display product pricing plans with three different tiers',
-    recommendedPosition: 'Mid to lower section, after feature introduction',
-    props: {
-      author: 'KREADO',
-      data: {
-        title: 'Choose Your Perfect Plan',
-        bottomContent: {
-          planOne: {
-            name: 'Basic',
-            price: '$99',
-            discount: 'Save 30%',
-            buttonText: 'Get Started',
-            features: [
-              '10 Videos Monthly',
-              '720p Video Quality',
-              'Basic AI Templates',
-              'EN/CN Support',
-              'Basic Support'
-            ]
-          },
-          planTwo: {
-            name: 'Professional',
-            price: '$199',
-            discount: 'Save 40%',
-            buttonText: 'Upgrade Now',
-            features: [
-              '50 Videos Monthly',
-              '1080p Video Quality',
-              'All AI Templates',
-              '40+ Languages Support',
-              '24/7 Support',
-              'Priority Rendering'
-            ]
-          },
-          planThree: {
-            name: 'Enterprise',
-            price: '$499',
-            discount: 'Save 50%',
-            buttonText: 'Contact Sales',
-            features: [
-              'Unlimited Videos',
-              '4K Video Quality',
-              'Custom AI Templates',
-              'All Languages Support',
-              'API Access',
-              'Dedicated Manager',
-              'Team Collaboration'
-            ]
-          }
-        }
-      }
-    }
-  },
-
-  titleTopThreeFlow: {
-    order: 4,
-    title: 'Top Title + Three Step Flow Component',
-    description: 'Display product usage process or service steps with arrow indicators',
-    recommendedPosition: 'Product introduction page or user guide section',
-    filePath: 'src/components/common_components/title_top_three_arrow_flow_bottom.js',
-    props: {
-      author: 'KREADO',
-      section: {
-        topContent: {
-          title: 'Create AI Videos in Three Easy Steps',
-          buttonText: 'Try Now'
-        },
-        bottomContent: [
-          {
-            number: '01',
-            content: 'Choose your favorite template or create from scratch'
-          },
-          {
-            number: '02',
-            content: 'Upload materials or generate content with AI'
-          },
-          {
-            number: '03',
-            content: 'Export multilingual videos with one click'
-          }
-        ]
-      }
-    }
-  },
-
-  titleTopSixModules: {
-    order: 5,
-    title: 'Top Title + Six Modules Component',
-    description: 'Display product features or service advantages in six-grid layout',
-    recommendedPosition: 'Product features introduction area',
-    filePath: 'src/components/common_components/title_top_six_modules_bottom.js',
-    props: {
-      author: 'KREADO',
-      section: {
-        topContent: {
-          emoji: '🚀',
-          title: 'Why Choose Us',
-          subtitle: 'Six Core Advantages to Power Your Business'
-        },
-        bottomContent: [
-          {
-            icon: '🎯',
-            title: 'AI Smart Creation',
-            content: 'Intelligent content analysis, automatic video script and storyboard generation'
-          },
-          {
-            icon: '🌍',
-            title: 'Multilingual Support',
-            content: 'Support 40+ languages, one-click multilingual version generation'
-          },
-          {
-            icon: '⚡',
-            title: 'Fast Rendering',
-            content: 'Advanced cloud rendering technology, minute-level delivery'
-          },
-          {
-            icon: '🎨',
-            title: 'Rich Templates',
-            content: '1000+ professional templates covering various scenarios'
-          },
-          {
-            icon: '🤖',
-            title: 'AI Voiceover',
-            content: 'Natural and realistic AI voiceover with multilingual support'
-          },
-          {
-            icon: '💡',
-            title: 'Smart Subtitles',
-            content: 'Automatic subtitle generation with multilingual translation'
-          }
-        ]
-      }
-    }
-  },
-
-  titleRightTable: {
-    order: 6,
-    title: 'Right Title + Left Table Component',
-    description: 'Display product feature comparison or feature list with right-side title',
-    recommendedPosition: 'Product feature comparison page',
-    filePath: 'src/components/common_components/title_right_table_left.js',
-    props: {
-      author: 'KREADO',
-      section: {
-        leftContent: [
-          {
-            icon: '🎯',
-            title: 'Smart Analysis',
-            content: 'Automatically analyze video content and provide optimization suggestions'
-          },
-          {
-            icon: '⚡',
-            title: 'Quick Processing',
-            content: 'Cloud rendering, complete video generation within 10 minutes'
-          },
-          {
-            icon: '🌍',
-            title: 'Multilingual Support',
-            content: 'Support subtitle and voiceover conversion in 40+ languages'
-          },
-          {
-            icon: '🎨',
-            title: 'Template System',
-            content: '1000+ professional templates for various scenarios'
-          }
-        ],
-        rightContent: {
-          icon: '🚀',
-          title: 'Powerful AI Video Creation Capabilities',
-          subtitle: 'Make creation simpler, make communication more efficient',
-          buttonText: 'Try Now'
-        }
-      }
-    }
-  },
-
-  titleLeftFourModules: {
-    order: 7,
-    title: 'Left Title + Right Four Modules Component',
+    title: 'Product Benefits With Four Blocks',
     description: 'Display core product features or service highlights in four modules',
-    recommendedPosition: 'Product features introduction area',
-    filePath: 'src/components/common_components/title_left_four_modules_right.js',
+    recommendedPosition: 'Upper section, after title',
+    filePath: 'src/components/common_components/product-benefits-with-four-blocks.js',
     props: {
       author: 'KREADO',
       section: {
@@ -248,30 +113,80 @@ export const exampleData = {
     }
   },
 
-  titleTopTwoModules: {
-    order: 8,
-    title: 'Top Title + Two Modules Component',
-    description: 'Display two main product features or service advantages with images',
-    recommendedPosition: 'Product features showcase area',
-    filePath: 'src/components/common_components/title_top_two_modules_bottom.js',
+  whyChooseUsWithSixBlocks: {
+    order: 4,
+    title: 'Why Choose Us With Six Blocks',
+    description: 'Display product features or service advantages in six-grid layout',
+    recommendedPosition: 'Upper-mid section, after benefits introduction',
+    filePath: 'src/components/common_components/why-choose-us-with-six-small-blocks.js',
     props: {
       author: 'KREADO',
       section: {
         topContent: {
-          title: 'Smart Creation, Breaking Language Barriers',
-          subtitle: 'Help Your Content Reach Global Markets'
+          emoji: '🚀',
+          title: 'Why Choose KREADO AI',
+          subtitle: 'Professional AI Video Creation Platform'
         },
         bottomContent: [
           {
-            title: 'AI-Powered Video Creation',
-            content: 'Using advanced AI technology to transform text into professional video content, saving 90% production time',
-            buttonText: 'Learn More',
+            icon: '🎯',
+            title: 'Precise Targeting',
+            content: 'Customize content for different market segments'
+          },
+          {
+            icon: '🌍',
+            title: 'Global Reach',
+            content: 'Support for 40+ languages and cultural adaptations'
+          },
+          {
+            icon: '⚡',
+            title: 'Lightning Fast',
+            content: 'Generate videos in minutes, not days'
+          },
+          {
+            icon: '💡',
+            title: 'Smart AI',
+            content: 'Advanced AI algorithms for optimal results'
+          },
+          {
+            icon: '📊',
+            title: 'Data Driven',
+            content: 'Analytics and insights for better performance'
+          },
+          {
+            icon: '🔒',
+            title: 'Secure & Reliable',
+            content: 'Enterprise-grade security and stability'
+          }
+        ]
+      }
+    }
+  },
+
+  whyChooseUsWithTwoBlocks: {
+    order: 5,
+    title: 'Why Choose Us With Two Blocks',
+    description: 'Display two main product features or service advantages with images',
+    recommendedPosition: 'Mid section, after feature blocks',
+    filePath: 'src/components/common_components/why-choose-us-with-two-huge-blocks.js',
+    props: {
+      author: 'KREADO',
+      section: {
+        topContent: {
+          title: 'Transform Your Video Marketing',
+          subtitle: 'Create engaging videos in minutes with AI'
+        },
+        bottomContent: [
+          {
+            title: 'AI-Powered Creation',
+            content: 'Our advanced AI technology transforms your text into professional marketing videos automatically, saving you time and resources.',
+            buttonText: 'Try Now',
             image: '/images/kreado-demo-pic1.png'
           },
           {
-            title: 'Global Content Distribution',
-            content: 'Support automatic translation and voiceover in 40+ languages, helping your content quickly enter international markets',
-            buttonText: 'Try Now',
+            title: 'Global Marketing Ready',
+            content: 'Instantly localize your videos into multiple languages, reaching global audiences with culturally adapted content.',
+            buttonText: 'Learn More',
             image: '/images/kreado-demo-pic2.png'
           }
         ]
@@ -279,46 +194,116 @@ export const exampleData = {
     }
   },
 
-  comparisonTable: {
-    order: 9,
-    title: 'Product Comparison Table Component',
-    description: 'Display feature comparison between product and competitors',
-    recommendedPosition: 'Upper section but not as first component',
+  // 3. How It Works (使用流程)
+  howItWorksWithWorkflow: {
+    order: 6,
+    title: 'How It Works With Workflow',
+    description: 'Display product usage process or service steps with arrow indicators',
+    recommendedPosition: 'Mid section, after features',
+    filePath: 'src/components/common_components/how-it-works-with-workflow.js',
     props: {
       author: 'KREADO',
       section: {
         topContent: {
-          title: 'Product Feature Comparison',
-          subtitle: 'Discover Our Advantages',
+          title: 'How It Works',
+          buttonText: 'Start Creating'
+        },
+        bottomContent: [
+          {
+            number: '01',
+            content: 'Input your marketing text or script'
+          },
+          {
+            number: '02',
+            content: 'AI generates video with matching visuals'
+          },
+          {
+            number: '03',
+            content: 'Export in multiple languages and formats'
+          }
+        ]
+      }
+    }
+  },
+
+  howItWorksWithThreeBlocks: {
+    order: 7,
+    title: 'How It Works With Three Blocks',
+    description: 'Display product workflow with three detailed feature blocks',
+    recommendedPosition: 'Mid section, after workflow',
+    filePath: 'src/components/common_components/how-it-works-with-three-blocks.js',
+    props: {
+      author: 'KREADO',
+      section: {
+        leftContent: {
+          icon: '🚀',
+          title: 'How Our AI Works',
+          subtitle: 'Transform your content into engaging videos with three simple steps',
+          buttonText: 'Start Creating'
+        },
+        rightContent: [
+          {
+            icon: '📝',
+            title: 'Input Content',
+            content: 'Simply paste your text or upload your script to begin the creation process'
+          },
+          {
+            icon: '🎨',
+            title: 'AI Processing',
+            content: 'Our AI analyzes your content and generates matching visuals and animations'
+          },
+          {
+            icon: '🌐',
+            title: 'Global Export',
+            content: 'Export your video in multiple languages with auto-generated voiceovers'
+          }
+        ]
+      }
+    }
+  },
+
+  // 4. Comparison & Tables (比较和表格)
+  productComparisonTable: {
+    order: 8,
+    title: 'Product Comparison Table',
+    description: 'Compare features between your product and competitors',
+    recommendedPosition: 'Mid-lower section, before pricing',
+    filePath: 'src/components/common_components/product_comparison_table.js',
+    props: {
+      author: 'KREADO',
+      section: {
+        topContent: {
+          title: 'Why Choose KREADO AI',
+          subtitle: 'Compare our features with traditional solutions',
           companies: {
-            competitor: 'Traditional Solution',
+            competitor: 'Traditional',
             us: 'KREADO AI'
           }
         },
         bottomContent: {
           features: [
             {
-              name: 'AI Smart Creation',
+              name: 'AI Video Generation',
               competitor: false,
               us: true
             },
             {
               name: 'Multilingual Support',
-              competitor: true,
-              us: true
-            },
-            {
-              name: 'Real-time Preview',
               competitor: false,
               us: true
             },
             {
-              name: 'Team Collaboration',
-              competitor: true,
+              name: 'Auto Voice Generation',
+              competitor: false,
               us: true
             },
             {
-              name: 'API Access',
+              name: 'Quick Turnaround',
+              competitor: false,
+              us: true
+            },
+            {
+              name: 'Cost Effective',
               competitor: false,
               us: true
             }
@@ -328,57 +313,68 @@ export const exampleData = {
     }
   },
 
-  faq: {
-    order: 10,
-    title: 'FAQ Component',
-    description: 'Display frequently asked questions and answers in two columns',
-    recommendedPosition: 'Must be second-to-last component if used',
+  callToActionWithTable: {
+    order: 9,
+    title: 'Call To Action With Table',
+    description: 'Display feature list with right-side call to action',
+    recommendedPosition: 'Mid-lower section, after comparison',
+    filePath: 'src/components/common_components/call-to-action-with-a-table.js',
     props: {
       author: 'KREADO',
       section: {
-        title: 'Frequently Asked Questions',
-        contents: [
+        leftContent: [
           {
-            question: 'How to start using the AI video creation tool?',
-            answer: 'Simply register an account, choose a template or create from scratch, input your content requirements, and our AI system will automatically generate professional videos for you.'
+            icon: '🎥',
+            title: 'AI Video Creation',
+            content: 'Generate professional videos automatically'
           },
           {
-            question: 'What languages are supported?',
-            answer: 'We currently support 40+ major languages, including English, Chinese, Japanese, Korean, French, German, etc., with one-click multilingual version generation.'
+            icon: '🌍',
+            title: 'Global Reach',
+            content: 'Support for 40+ languages'
           },
           {
-            question: 'How long does video rendering take?',
-            answer: 'Thanks to our cloud rendering technology, most videos can be completed within 10 minutes. Specific time depends on video length and complexity.'
+            icon: '⚡',
+            title: 'Fast Processing',
+            content: 'Complete videos in minutes'
           },
           {
-            question: 'Do you offer enterprise customization services?',
-            answer: 'Yes, we provide customized solutions for enterprise clients, including exclusive template development, API integration, and team collaboration features.'
+            icon: '💰',
+            title: 'Cost Effective',
+            content: 'Save up to 90% on video production'
           }
-        ]
+        ],
+        rightContent: {
+          icon: '🚀',
+          title: 'Ready to Transform Your Video Marketing?',
+          subtitle: 'Join thousands of businesses using KREADO AI',
+          buttonText: 'Start Free Trial'
+        }
       }
     }
   },
 
-  articleContent: {
-    order: 11,
-    title: 'Article Content Component',
-    description: 'Display article main content, supporting titles and paragraphs',
-    recommendedPosition: 'Article page main body',
-    filePath: 'src/components/common_components/common_article_content.js',
+  // 5. Content Sections (内容展示)
+  textBlock: {
+    order: 10,
+    title: 'Text Block',
+    description: 'Display article content with title and paragraphs',
+    recommendedPosition: 'Content area, flexible positioning',
+    filePath: 'src/components/common_components/text-block.js',
     props: {
       data: {
-        title: 'Future Trends in AI Video Creation',
+        title: 'Understanding AI Video Creation',
         bottomContent: [
           {
             content: {
-              contentTitle: 'AI Revolution in Video Production',
-              contentText: 'AI technology is fundamentally changing the video production industry. Through deep learning and natural language processing, AI can automatically generate scripts, create storyboards, voiceovers, and subtitles, greatly improving video production efficiency.\n\nIn the future, AI will further enhance the intelligence and personalization of creation, providing creators with more possibilities.'
+              contentTitle: 'The Power of AI in Video Production',
+              contentText: 'AI technology has revolutionized the way we create and distribute video content. With advanced algorithms and machine learning capabilities, what once took days or weeks can now be accomplished in minutes.'
             }
           },
           {
             content: {
-              contentTitle: 'New Opportunities in Global Communication',
-              contentText: 'Multilingual support and automatic localization features allow content creators to easily reach global markets. Advances in AI translation and voiceover technology make high-quality cross-language content production more convenient and economical.'
+              contentTitle: 'Multilingual Support',
+              contentText: 'Our platform supports over 40 languages, making it easy to reach global audiences. The AI automatically generates appropriate translations and voiceovers while maintaining the original message and tone.'
             }
           }
         ]
@@ -386,34 +382,34 @@ export const exampleData = {
     }
   },
 
-  moreInsights: {
-    order: 12,
-    title: 'More Insights Component',
-    description: 'Display related articles or insights in four columns',
-    recommendedPosition: 'Article bottom or standalone section',
-    filePath: 'src/components/common_components/more_insights.js',
+  moreInsightsWithFourCards: {
+    order: 11,
+    title: 'More Insights With Four Cards',
+    description: 'Display related articles or insights in card format',
+    recommendedPosition: 'Lower section, after main content',
+    filePath: 'src/components/common_components/more_insights_with_four_cards.js',
     props: {
       data: {
         topContent: [
           {
             imageUrl: '/images/kreado-demo-pic1.png',
-            subTitle: 'AI Innovation',
-            title: 'How AI is Changing Video Creation Process'
+            subTitle: 'AI TECHNOLOGY',
+            title: 'The Future of Video Marketing'
           },
           {
             imageUrl: '/images/kreado-demo-pic2.png',
-            subTitle: 'Marketing Strategy',
-            title: 'Best Practices in Multilingual Video Marketing'
+            subTitle: 'CASE STUDY',
+            title: 'Success Stories with AI Videos'
           },
           {
             imageUrl: '/images/kreado-demo-pic1.png',
-            subTitle: 'Tech Trends',
-            title: '2024 Video Production Technology Outlook'
+            subTitle: 'TUTORIAL',
+            title: 'Getting Started with KREADO AI'
           },
           {
             imageUrl: '/images/kreado-demo-pic2.png',
-            subTitle: 'Case Study',
-            title: 'Global Brands Localization Marketing Strategy'
+            subTitle: 'INDUSTRY NEWS',
+            title: 'Latest Trends in AI Marketing'
           }
         ]
       }
@@ -421,29 +417,125 @@ export const exampleData = {
   },
 
   imageBanner: {
-    order: 13,
-    title: 'Image Banner Component',
-    description: 'Display large banner image',
-    recommendedPosition: 'Within article content or page divider',
+    order: 12,
+    title: 'Image Banner',
+    description: 'Display full-width image banner',
+    recommendedPosition: 'Flexible, used to break up text sections',
     filePath: 'src/components/common_components/image_banner.js',
     props: {
-      imageUrl: '/images/kreado-demo-pic1.png',
-      altText: 'AI Video Creation Platform Feature Showcase'
+      imageUrl: '/images/kreado-top-bg.png',
+      altText: 'AI Video Creation'
     }
   },
 
-  pageDownCTA: {
-    order: 14,
-    title: 'Page Bottom CTA Component',
-    description: 'Display Call-to-Action content, typically used at page bottom',
-    recommendedPosition: 'Must be the last component',
+  // 6. Support Sections (支持信息)
+  faqSection: {
+    order: 13,
+    title: 'FAQ Section',
+    description: 'Display frequently asked questions in two columns',
+    recommendedPosition: 'Lower section, before CTA',
+    filePath: 'src/components/common_components/faqs.js',
     props: {
       author: 'KREADO',
       section: {
-        title: 'Start Your AI Video Creation Journey',
-        subTitle: 'Sign up for free trial and explore unlimited possibilities with AI',
-        buttonText: 'Get Started Now'
+        title: 'Frequently Asked Questions',
+        contents: [
+          {
+            question: 'How does AI video creation work?',
+            answer: 'Our AI analyzes your input text and automatically generates matching visuals, animations, and voiceovers to create professional videos.'
+          },
+          {
+            question: 'What languages are supported?',
+            answer: 'We support over 40 languages for both text and voice generation, making it perfect for global marketing.'
+          },
+          {
+            question: 'How long does it take to create a video?',
+            answer: 'Most videos can be generated within minutes, depending on length and complexity.'
+          },
+          {
+            question: 'Can I customize the output?',
+            answer: 'Yes, you can customize various aspects including style, tone, pace, and branding elements.'
+          }
+        ]
+      }
+    }
+  },
+
+  pricingWithThreeCards: {
+    order: 14,
+    title: 'Pricing With Three Cards',
+    description: 'Display pricing plans with feature comparison',
+    recommendedPosition: 'Lower section, after FAQ and before final CTA',
+    filePath: 'src/components/common_components/pricing-with-three-cards.js',
+    props: {
+      author: 'KREADO',
+      data: {
+        title: 'Choose Your Plan',
+        bottomContent: {
+          planOne: {
+            name: 'Basic',
+            price: '$29',
+            discount: 'SAVE 20%',
+            buttonText: 'Start Basic',
+            features: [
+              '5 AI video generations/month',
+              'Basic templates',
+              '720p video quality',
+              '10 languages support',
+              'Email support'
+            ]
+          },
+          planTwo: {
+            name: 'Professional',
+            price: '$79',
+            discount: 'MOST POPULAR',
+            buttonText: 'Start Pro',
+            features: [
+              '20 AI video generations/month',
+              'Premium templates',
+              '1080p video quality',
+              '25 languages support',
+              'Priority support',
+              'Custom branding'
+            ]
+          },
+          planThree: {
+            name: 'Enterprise',
+            price: 'Custom',
+            discount: 'BEST VALUE',
+            buttonText: 'Contact Sales',
+            features: [
+              'Unlimited video generations',
+              'Custom templates',
+              '4K video quality',
+              'All languages support',
+              '24/7 dedicated support',
+              'API access',
+              'Custom integration'
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  // 7. CTA (行动召唤)
+  callToAction: {
+    order: 15,
+    title: 'Call To Action',
+    description: 'Final call to action section with strong message',
+    recommendedPosition: 'Must be the last component',
+    filePath: 'src/components/common_components/call-to-action.js',
+    props: {
+      author: 'KREADO',
+      section: {
+        title: 'Ready to Transform Your Video Marketing?',
+        subtitle: 'Join thousands of businesses already using KREADO AI',
+        buttonText: 'Get Started Free',
+        backgroundImage: '/images/cta-background.jpg'
       }
     }
   }
-}; 
+};
+
+export default exampleData; 
