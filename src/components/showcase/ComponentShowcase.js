@@ -5,7 +5,7 @@ import { exampleData } from './example-data';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import TitleSection from '../common_components/title_section';
+import TitleSection from '../common_components/title-section';
 import PricingWithThreeCards from '../common_components/pricing-with-three-cards';
 import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
 import WhyChooseUsWithSixBlocks from '../common_components/why-choose-us-with-six-small-blocks';
@@ -17,10 +17,10 @@ import WhyChooseUsWithTwoBlocks from '../common_components/why-choose-us-with-tw
 import PageDownCTA from '../common_components/call-to-action';
 import HeroSectionWithVideo from '../common_components/hero-section-with-video';
 import FaqSection from '../common_components/faqs';
-import ImageBanner from '../common_components/image_banner';
-import ProductComparisonTable from '../common_components/product_comparison_table';
+import ImageBanner from '../common_components/image-banner';
+import ProductComparisonTable from '../common_components/product-comparison-table';
 import TextBlock from '../common_components/text-block';
-import MoreInsightsWithFourCards from '../common_components/more_insights_with_four_cards';
+import MoreInsightsWithFourCards from '../common_components/more-insights-with-four-cards';
 import { KreadoHeader } from '../kreado/header_new';
 import { KreadoFooter } from '../kreado/footer_new';
 
@@ -106,21 +106,21 @@ const ComponentShowcase = () => {
                   <div className={`${
                     key === 'heroSectionWithVideo' ? 'max-w-full md:max-w-[900px] lg:max-w-[1200px] mx-auto' : ''
                   } w-full`}>
-                    {key === 'titleSection' && <TitleSection {...data.props} author="KREADOAI" />}
-                    {key === 'howItWorksWithWorkflow' && <HowItWorksWithWorkflow {...data.props} author="KREADOAI" />}
-                    {key === 'howItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'whyChooseUsWithTwoBlocks' && <WhyChooseUsWithTwoBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'whyChooseUsWithSixBlocks' && <WhyChooseUsWithSixBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'callToActionWithTable' && <CallToActionWithTable {...data.props} author="KREADOAI" />}
-                    {key === 'callToAction' && <CallToAction {...data.props} author="KREADOAI" />}
-                    {key === 'productBenefitsWithFourBlocks' && <ProductBenefitsWithFourBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'heroSectionWithVideo' && <HeroSectionWithVideo {...data.props} author="KREADOAI" />}
-                    {key === 'faqSection' && <FaqSection {...data.props} author="KREADOAI" />}
-                    {key === 'textBlock' && <TextBlock {...data.props} author="KREADOAI" />}
-                    {key === 'moreInsightsWithFourCards' && <MoreInsightsWithFourCards {...data.props} author="KREADOAI" />}
-                    {key === 'imageBanner' && <ImageBanner {...data.props} author="KREADOAI" />}
-                    {key === 'productComparisonTable' && <ProductComparisonTable {...data.props} author="KREADOAI" />}
-                    {key === 'pricingWithThreeCards' && <PricingWithThreeCards {...data.props} author="KREADOAI" />}
+                    {key === 'TitleSection' && <TitleSection {...data.props} author="KREADOAI" />}
+                    {key === 'HowItWorksWithWorkflow' && <HowItWorksWithWorkflow {...data.props} author="KREADOAI" />}
+                    {key === 'HowItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks {...data.props} author="KREADOAI" />}
+                    {key === 'WhyChooseUsWithTwoBlocks' && <WhyChooseUsWithTwoBlocks {...data.props} author="KREADOAI" />}
+                    {key === 'WhyChooseUsWithSixBlocks' && <WhyChooseUsWithSixBlocks {...data.props} author="KREADOAI" />}
+                    {key === 'CallToActionWithTable' && <CallToActionWithTable {...data.props} author="KREADOAI" />}
+                    {key === 'CallToAction' && <CallToAction {...data.props} author="KREADOAI" />}
+                    {key === 'ProductBenefitsWithFourBlocks' && <ProductBenefitsWithFourBlocks {...data.props} author="KREADOAI" />}
+                    {key === 'HeroSectionWithVideo' && <HeroSectionWithVideo {...data.props} author="KREADOAI" />}
+                    {key === 'Faqs' && <FaqSection {...data.props} author="KREADOAI" />}
+                    {key === 'TextBlock' && <TextBlock {...data.props} author="KREADOAI" />}
+                    {key === 'MoreInsightsWithFourCards' && <MoreInsightsWithFourCards {...data.props} author="KREADOAI" />}
+                    {key === 'ImageBanner' && <ImageBanner {...data.props} author="KREADOAI" />}
+                    {key === 'ProductComparisonTable' && <ProductComparisonTable {...data.props} author="KREADOAI" />}
+                    {key === 'PricingWithThreeCards' && <PricingWithThreeCards {...data.props} author="KREADOAI" />}
                   </div>
                 </div>
               </div>

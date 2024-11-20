@@ -40,7 +40,7 @@
 
 export const exampleData = {
   // 1. Hero & Title (页面顶部组件)
-  heroSectionWithVideo: {
+  HeroSectionWithVideo: {
     order: 1,
     title: 'Hero Section With Video',
     description: 'Display main tools and feature introduction with video background',
@@ -59,7 +59,7 @@ export const exampleData = {
     }
   },
 
-  titleSection: {
+  TitleSection: {
     order: 2,
     title: 'Title Section',
     description: 'Display article or page main title and subtitle',
@@ -73,7 +73,7 @@ export const exampleData = {
   },
 
   // 2. Feature & Benefits (产品特性和优势)
-  productBenefitsWithFourBlocks: {
+  ProductBenefitsWithFourBlocks: {
     order: 3,
     title: 'Product Benefits With Four Blocks',
     description: 'Display core product features or service highlights in four modules',
@@ -113,7 +113,7 @@ export const exampleData = {
     }
   },
 
-  whyChooseUsWithSixBlocks: {
+  WhyChooseUsWithSixBlocks: {
     order: 4,
     title: 'Why Choose Us With Six Blocks',
     description: 'Display product features or service advantages in six-grid layout',
@@ -163,7 +163,7 @@ export const exampleData = {
     }
   },
 
-  whyChooseUsWithTwoBlocks: {
+  WhyChooseUsWithTwoBlocks: {
     order: 5,
     title: 'Why Choose Us With Two Blocks',
     description: 'Display two main product features or service advantages with images',
@@ -195,7 +195,7 @@ export const exampleData = {
   },
 
   // 3. How It Works (使用流程)
-  howItWorksWithWorkflow: {
+  HowItWorksWithWorkflow: {
     order: 6,
     title: 'How It Works With Workflow',
     description: 'Display product usage process or service steps with arrow indicators',
@@ -226,7 +226,7 @@ export const exampleData = {
     }
   },
 
-  howItWorksWithThreeBlocks: {
+  HowItWorksWithThreeBlocks: {
     order: 7,
     title: 'How It Works With Three Blocks',
     description: 'Display product workflow with three detailed feature blocks',
@@ -263,7 +263,7 @@ export const exampleData = {
   },
 
   // 4. Comparison & Tables (比较和表格)
-  productComparisonTable: {
+  ProductComparisonTable: {
     order: 8,
     title: 'Product Comparison Table',
     description: 'Compare features between your product and competitors',
@@ -313,7 +313,7 @@ export const exampleData = {
     }
   },
 
-  callToActionWithTable: {
+  CallToActionWithTable: {
     order: 9,
     title: 'Call To Action With Table',
     description: 'Display feature list with right-side call to action',
@@ -355,7 +355,7 @@ export const exampleData = {
   },
 
   // 5. Content Sections (内容展示)
-  textBlock: {
+  TextBlock: {
     order: 10,
     title: 'Text Block',
     description: 'Display article content with title and paragraphs',
@@ -382,7 +382,7 @@ export const exampleData = {
     }
   },
 
-  moreInsightsWithFourCards: {
+  MoreInsightsWithFourCards: {
     order: 11,
     title: 'More Insights With Four Cards',
     description: 'Display related articles or insights in card format',
@@ -416,7 +416,7 @@ export const exampleData = {
     }
   },
 
-  imageBanner: {
+  ImageBanner: {
     order: 12,
     title: 'Image Banner',
     description: 'Display full-width image banner',
@@ -429,7 +429,7 @@ export const exampleData = {
   },
 
   // 6. Support Sections (支持信息)
-  faqSection: {
+  Faqs: {
     order: 13,
     title: 'FAQ Section',
     description: 'Display frequently asked questions in two columns',
@@ -461,7 +461,7 @@ export const exampleData = {
     }
   },
 
-  pricingWithThreeCards: {
+  PricingWithThreeCards: {
     order: 14,
     title: 'Pricing With Three Cards',
     description: 'Display pricing plans with feature comparison',
@@ -520,7 +520,7 @@ export const exampleData = {
   },
 
   // 7. CTA (行动召唤)
-  callToAction: {
+  CallToAction: {
     order: 15,
     title: 'Call To Action',
     description: 'Final call to action section with strong message',
