@@ -266,7 +266,6 @@ export const exampleData = {
     }
   },
 
-  // 4. Comparison & Tables (比较和表格)
   ProductComparisonTable: {
     order: 9,
     title: 'Product Comparison Table',
@@ -605,7 +604,7 @@ export const exampleData = {
   },
 
   MoreInsightsWithFourCards: {
-    order: 16,
+    order: 17,
     title: 'More Insights With Four Cards',
     description: 'Display related articles or insights in card format',
     recommendedPosition: 'Lower section, after main content',
@@ -637,7 +636,7 @@ export const exampleData = {
   },
 
   ImageBanner: {
-    order: 17,
+    order: 18,
     title: 'Image Banner',
     description: 'Display full-width image banner',
     recommendedPosition: 'Flexible, used to break up text sections',
@@ -651,7 +650,7 @@ export const exampleData = {
   },
 
   Faqs: {
-    order: 18,
+    order: 19,
     title: 'FAQ Section',
     description: 'Display frequently asked questions in two columns',
     recommendedPosition: 'Lower section, before CTA',
@@ -681,7 +680,7 @@ export const exampleData = {
   },
 
   FaqTwoColumnsWithSmallTitle: {
-    order: 19,
+    order: 20,
     title: 'FAQ Two Columns With Small Title',
     description: 'Two-column FAQ section with left title and right expandable Q&A',
     recommendedPosition: 'Lower section, before pricing',
@@ -710,7 +709,7 @@ export const exampleData = {
   },
 
   FaqTwoColumnsWithBigTitle: {
-    order: 20,
+    order: 21,
     title: 'FAQ Two Columns With Big Title',
     description: 'Two-column FAQ section with left large title and right expandable Q&A',
     recommendedPosition: 'Lower section, before pricing',
@@ -739,7 +738,7 @@ export const exampleData = {
   },
 
   PricingWithThreeCards: {
-    order: 21,
+    order: 22,
     title: 'Pricing With Three Cards',
     description: 'Display pricing plans with feature comparison',
     recommendedPosition: 'Lower section, after FAQ and before final CTA',
@@ -795,7 +794,7 @@ export const exampleData = {
   },
 
   CallToAction: {
-    order: 22,
+    order: 23,
     title: 'Call To Action',
     description: 'Final call to action section with strong message',
     recommendedPosition: 'Must be the last component',
@@ -809,7 +808,7 @@ export const exampleData = {
   },
 
   CallToActionWithImage: {
-    order: 23,
+    order: 24,
     title: 'Call To Action With Image',
     description: 'Final call to action section with background image',
     recommendedPosition: 'Must be the last component',
@@ -826,7 +825,7 @@ export const exampleData = {
   },
 
   TrustedByLogos: {
-    order: 24,
+    order: 25,
     title: 'Trusted By Logos',
     description: 'Component to showcase partner/client logos in a carousel',
     recommendedPosition: 'Upper section, usually after Hero Section',
@@ -860,7 +859,6 @@ export const exampleData = {
       ]
     }
   }
-  
 };
 
 export default exampleData; 
