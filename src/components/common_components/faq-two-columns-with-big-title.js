@@ -41,8 +41,8 @@ const FAQTwoColumnsWithBigTitle = ({ data, author }) => {
                   {faq.question}
                 </h3>
                 <svg
-                  className={`w-6 h-6 transform transition-transform ${
-                    openIndex === index ? 'rotate-180' : 'rotate-90'
+                  className={`w-6 h-6 transform transition-transform duration-300 ${
+                    openIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -56,13 +56,19 @@ const FAQTwoColumnsWithBigTitle = ({ data, author }) => {
                   />
                 </svg>
               </button>
-              {openIndex === index && (
+              <div 
+                className={`transform-gpu overflow-hidden transition-all duration-300 ease-out
+                  ${openIndex === index 
+                    ? 'h-auto scale-y-100 opacity-100' 
+                    : 'h-0 scale-y-95 opacity-0'
+                  }`}
+              >
                 <div className="pb-5">
                   <p className="text-gray-500">
                     {faq.answer}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

@@ -55,13 +55,19 @@ const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
                   />
                 </svg>
               </button>
-              {openIndex === index && (
+              <div 
+                className={`transition-all duration-300 ease-in-out ${
+                  openIndex === index 
+                    ? 'max-h-[500px] opacity-100' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
                 <div className="px-6 pb-5">
                   <p className="text-gray-700">
                     {faq.answer}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
