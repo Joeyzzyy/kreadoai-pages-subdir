@@ -486,7 +486,7 @@ export const exampleData = {
 
   KeyResultsWithTextBlock: {
     order: 14,
-    title: 'KeyResultsWithTextBlock',
+    title: 'Key Results With Text Block',
     description: 'Display article content with title and paragraphs',
     recommendedPosition: 'Content area, flexible positioning',
     filePath: 'src/components/common_components/key-results-with-text-block.js',
