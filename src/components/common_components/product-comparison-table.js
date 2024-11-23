@@ -11,7 +11,7 @@ import {
 } from "react-icons/io5";
 import authorStyles from '../../styles/textStyles';
 import PropTypes from 'prop-types';
-import KreadoIcon from '../../../public/images/kreado-logo-content-use.png';
+import KreadoIcon from '../../../public/images/kreado-logo-content-use.webp';
 import Image from 'next/image';
 
 // 创建一个图标映射对象
@@ -199,9 +199,9 @@ const getIconByFeatureName = (featureName) => {
   return bestMatch.score > 0 ? bestMatch.icon : FaTools;
 };
 
-const ComparisonTable = ({ author, section }) => {
+const ProductComparisonTable = ({ data, author }) => {
   const styles = authorStyles[author];
-  const tableData = section;
+  const tableData = data;
 
   return (
     <div className="bg-gradient-radial from-gray-50 via-white to-gray-50 py-8 md:py-20 px-4">
@@ -290,8 +290,8 @@ const ComparisonTable = ({ author, section }) => {
   );
 };
 
-ComparisonTable.propTypes = {
+ProductComparisonTable.propTypes = {
   author: PropTypes.oneOf(['HIXAI', 'JOGGAI', 'JohnsmithAI', 'KREADO'])
 };
 
-export default ComparisonTable;
+export default ProductComparisonTable;

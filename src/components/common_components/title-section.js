@@ -1,39 +1,28 @@
 'use client';
 import React from 'react';
+import authorStyles from '../../styles/textStyles';
 
-const TitleContent = ({ title, subtitle, author }) => {
-  const containsChinese = (str) => /[\u4e00-\u9fa5]/.test(str);
-  const isChinese = containsChinese(title);
+const TitleSection = ({ data, author }) => {
+  const styles = authorStyles[author];  // 获取对应的样式
   
-  // 根据是否包含中文设置不同的样式类
-  const titleClasses = isChinese
-    ? "text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight text-center"
-    : "text-3xl md:text-4xl font-bold mb-4 text-gray-900 leading-tight text-left";
-
-  const subtitleClasses = isChinese
-    ? "text-lg md:text-xl mb-6 text-gray-700 leading-relaxed text-center"
-    : "text-lg md:text-xl mb-6 text-gray-700 leading-relaxed text-left";
-
-  const authorClasses = isChinese
-    ? "flex items-center text-gray-600 justify-center"
-    : "flex items-center text-gray-600 justify-start";
-
   return (
-    <div className="relative z-10 min-h-[50vh] flex items-center">
+    <div className="relative z-10 min-h-[40vh] flex items-center justify-center">
       <header className="header w-full">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className={titleClasses}>
-            {title}
-          </h1>
-          {subtitle && (
-            <h2 className={subtitleClasses}>
-              {subtitle}
+        <div className="w-[80%] mx-auto text-center">
+          {data?.title && (
+            <h1 className={`${styles.h1.fontSize} ${styles.h1.fontWeight} ${styles.h1.color} mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient`}>
+              {data.title}
+            </h1>
+          )}
+          {data?.subtitle && (
+            <h2 className={`${styles.h2.fontSize} ${styles.h2.fontWeight} ${styles.h2.color} mb-8 leading-relaxed`}>
+              {data.subtitle}
             </h2>
           )}
           {author && (
-            <div className={authorClasses}>
-              <span className="text-base">
-                {isChinese ? "作者:" : "Author:"}{author}
+            <div className="mt-4">
+              <span className={`${styles.paragraph.fontSize} ${styles.paragraph.color}`}>
+                Author: {author}
               </span>
             </div>
           )}
@@ -43,4 +32,4 @@ const TitleContent = ({ title, subtitle, author }) => {
   );
 };
 
-export default TitleContent;
+export default TitleSection;

@@ -4,8 +4,8 @@ import React from 'react';
 import TableOfContents from '../common_components/widget-table_of_contents';
 
 import HeroSectionWithVideo from '../common_components/hero-section-with-video';
-import TextBlock from '../common_components/text-block';
-import CallToAction from '../common_components/call-to-action';
+import TextBlock from '../common_components/key-results-with-text-block';
+import CallToAction from '../common_components/call-to-action-with-image';
 import HowItWorksWithThreeBlocks from '../common_components/how-it-works-with-three-blocks';
 import WhyChooseUsWithTwoHugeBlocks from '../common_components/why-choose-us-with-two-huge-blocks';
 import WhyChooseUsWithSixSmallBlocks from '../common_components/why-choose-us-with-six-small-blocks';

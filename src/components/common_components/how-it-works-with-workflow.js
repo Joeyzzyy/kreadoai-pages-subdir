@@ -4,10 +4,9 @@ import CustomButton from './widget-custom_button';
 import authorStyles from '../../styles/textStyles';
 import buttonLinks from '../../config/buttonLinks';
 
-const TitleTopThreeFlowDown = ({ section, author }) => {
-  console.log('hhh current author:', author);
+const HowItWorksWithWorkflow = ({ data, author }) => {
   const styles = authorStyles[author];
-  const { bottomContent, topContent } = section;
+  const { bottomContent, topContent } = data;
   
   const getButtonLink = () => {
     return buttonLinks.workbench || '#';
@@ -51,4 +50,4 @@ const TitleTopThreeFlowDown = ({ section, author }) => {
   );
 };
 
-export default TitleTopThreeFlowDown;
+export default HowItWorksWithWorkflow;

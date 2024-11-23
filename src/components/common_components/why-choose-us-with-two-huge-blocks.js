@@ -5,7 +5,7 @@ import CustomButton from './widget-custom_button';
 import authorStyles from '../../styles/textStyles';
 import buttonLinks from '../../config/buttonLinks';
 
-const TitleTopTwoModulesDown = ({ section, author }) => {
+const WhyChooseUsWithTwoHugeBlocks = ({ data, author }) => {
   const styles = authorStyles[author];
 
   const [validImages, setValidImages] = useState({});
@@ -13,7 +13,7 @@ const TitleTopTwoModulesDown = ({ section, author }) => {
   useEffect(() => {
     const validateImages = async () => {
       const imageValidations = {};
-      for (const content of section.bottomContent) {
+      for (const content of data.bottomContent) {
         if (content.image) {
           const isValid = await checkImage(content.image);
           imageValidations[content.image] = isValid;
@@ -22,15 +22,15 @@ const TitleTopTwoModulesDown = ({ section, author }) => {
       setValidImages(imageValidations);
     };
     validateImages();
-  }, [section.bottomContent]);
+  }, [data.bottomContent]);
 
   // 获取图片源地址
   const getImageSrc = (imagePath, index) => {
     // KREADO 作者使用特定的演示图片
-    return `/images/kreado-demo-pic${index + 1}.png`;
+    return `/images/kreado-demo-pic${index + 1}.webp`;
 
     // 其他作者使用原有的图片验证逻辑
-    // return (imagePath && validImages[imagePath]) ? imagePath : '/images/placeholder.png';
+    // return (imagePath && validImages[imagePath]) ? imagePath : '/images/placeholder.webp';
   };
 
   // 获取作者对应的workbench链接
@@ -38,7 +38,7 @@ const TitleTopTwoModulesDown = ({ section, author }) => {
     return buttonLinks.workbench || '#';
   };
 
-  const { topContent, bottomContent } = section;
+  const { topContent, bottomContent } = data;
   return (
     <div className="flex flex-col items-center bg-blue-500/1">
       {/* 顶部标题区域 */}
@@ -99,4 +99,4 @@ const TitleTopTwoModulesDown = ({ section, author }) => {
   );
 };
 
-export default TitleTopTwoModulesDown;
+export default WhyChooseUsWithTwoHugeBlocks;

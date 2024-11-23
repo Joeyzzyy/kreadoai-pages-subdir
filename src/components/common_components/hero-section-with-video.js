@@ -5,8 +5,8 @@ import buttonLinks from '../../config/buttonLinks';
 import Image from 'next/image';
 import styles from './styles/hero-section-with-video.module.css';
 
-const PageTopTool = ({ section, author }) => {
-  const topContent = section.topContent;
+const HeroSectionWithVideo = ({ data }) => {
+  const topContent = data.topContent;
 
   const getButtonLink = () => {
     return buttonLinks.workbench || '#';
@@ -17,7 +17,7 @@ const PageTopTool = ({ section, author }) => {
       <div className={`banner-container w-full bg-cover bg-center bg-no-repeat ${styles['banner-height']}`}>
         <div className="absolute inset-0">
           <Image
-            src="/images/kreado-top-bg.png"
+            src="/images/kreado-top-bg.webp"
             alt="Background"
             fill
             priority
@@ -39,9 +39,9 @@ const PageTopTool = ({ section, author }) => {
         </div>
 
         <div className="relative z-10 pt-8 md:pt-6 mb-10 md:mb-8 px-4">
-          <h1 className="text-center text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-center text-2xl md:text-3xl font-bold text-white">
             {topContent.title}
-          </h1>
+          </h2>
           {topContent.description && (
             <p className="text-center text-base md:text-lg mt-2 md:mt-3 text-white/90 max-w-3xl mx-auto">
               {topContent.description}
@@ -79,4 +79,4 @@ const PageTopTool = ({ section, author }) => {
   );
 };
 
-export default PageTopTool;
+export default HeroSectionWithVideo;

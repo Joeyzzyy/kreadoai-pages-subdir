@@ -6,21 +6,31 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import TitleSection from '../common_components/title-section';
+import TitleSectionWithImage from '../common_components/title-section-with-image.js';
 import PricingWithThreeCards from '../common_components/pricing-with-three-cards';
 import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
 import WhyChooseUsWithSixBlocks from '../common_components/why-choose-us-with-six-small-blocks';
-import CallToActionWithTable from '../common_components/call-to-action-with-a-table';
 import CallToAction from '../common_components/call-to-action';
+import CallToActionWithTable from '../common_components/call-to-action-with-a-table';
+import CallToActionWithImage from '../common_components/call-to-action-with-image';
 import HowItWorksWithThreeBlocks from '../common_components/how-it-works-with-three-blocks';
 import ProductBenefitsWithFourBlocks from '../common_components/product-benefits-with-four-blocks';
 import WhyChooseUsWithTwoBlocks from '../common_components/why-choose-us-with-two-huge-blocks';
-import PageDownCTA from '../common_components/call-to-action';
 import HeroSectionWithVideo from '../common_components/hero-section-with-video';
-import FaqSection from '../common_components/faqs';
+import Faqs from '../common_components/faqs';
+import FaqTwoColumnsWithSmallTitle from '../common_components/faq-two-columns-with-small-title';
+import FaqTwoColumnsWithBigTitle from '../common_components/faq-two-columns-with-big-title';
 import ImageBanner from '../common_components/image-banner';
 import ProductComparisonTable from '../common_components/product-comparison-table';
-import TextBlock from '../common_components/text-block';
+import KeyResultsWithTextBlock from '../common_components/key-results-with-text-block';
 import MoreInsightsWithFourCards from '../common_components/more-insights-with-four-cards';
+import TrustedByLogos from '../common_components/trusted-by-logos';
+import UserReviews from '../common_components/user-reviews';
+import UserReviewsMovingCards from '../common_components/user-reviews-with-moving-cards';
+import UserReviewsSquareCards from '../common_components/user-reviews-with-square-cards';
+import KeyResultsWithThreeCards from '../common_components/key-results-with-three-cards';
+import KeyResultsWithImage from '../common_components/key-results-with-image.js';
+
 import { KreadoHeader } from '../kreado/header_new';
 import { KreadoFooter } from '../kreado/footer_new';
 
@@ -47,7 +57,7 @@ const ComponentShowcase = () => {
       <div className="relative min-h-screen bg-slate-900 w-full pt-[4.2rem]">
         {/* Header */}
         <div className="bg-slate-800 border-b border-slate-700 w-full">
-          <div className="w-[80%] mx-auto py-12">
+          <div className="w-[90%] mx-auto py-12">
             <h1 className="text-4xl font-bold text-white tracking-tight">Component Library</h1>
             <p className="mt-4 text-lg text-slate-300 max-w-3xl">
               Explore our comprehensive collection of pre-built components designed for creating modern, responsive web applications.
@@ -59,7 +69,7 @@ const ComponentShowcase = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-[80%] mx-auto py-12">
+        <div className="w-[90%] mx-auto py-12">
           {Object.entries(exampleData).map(([key, data]) => (
             <div key={key} className="mb-8" ref={el => componentRefs[key] = el}>
               <div className="bg-slate-800 rounded-xl shadow-sm border border-slate-700 overflow-hidden">
@@ -106,21 +116,31 @@ const ComponentShowcase = () => {
                   <div className={`${
                     key === 'heroSectionWithVideo' ? 'max-w-full md:max-w-[900px] lg:max-w-[1200px] mx-auto' : ''
                   } w-full`}>
-                    {key === 'TitleSection' && <TitleSection {...data.props} author="KREADOAI" />}
-                    {key === 'HowItWorksWithWorkflow' && <HowItWorksWithWorkflow {...data.props} author="KREADOAI" />}
-                    {key === 'HowItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'WhyChooseUsWithTwoBlocks' && <WhyChooseUsWithTwoBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'WhyChooseUsWithSixBlocks' && <WhyChooseUsWithSixBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'CallToActionWithTable' && <CallToActionWithTable {...data.props} author="KREADOAI" />}
-                    {key === 'CallToAction' && <CallToAction {...data.props} author="KREADOAI" />}
-                    {key === 'ProductBenefitsWithFourBlocks' && <ProductBenefitsWithFourBlocks {...data.props} author="KREADOAI" />}
-                    {key === 'HeroSectionWithVideo' && <HeroSectionWithVideo {...data.props} author="KREADOAI" />}
-                    {key === 'Faqs' && <FaqSection {...data.props} author="KREADOAI" />}
-                    {key === 'TextBlock' && <TextBlock {...data.props} author="KREADOAI" />}
-                    {key === 'MoreInsightsWithFourCards' && <MoreInsightsWithFourCards {...data.props} author="KREADOAI" />}
-                    {key === 'ImageBanner' && <ImageBanner {...data.props} author="KREADOAI" />}
-                    {key === 'ProductComparisonTable' && <ProductComparisonTable {...data.props} author="KREADOAI" />}
-                    {key === 'PricingWithThreeCards' && <PricingWithThreeCards {...data.props} author="KREADOAI" />}
+                    {key === 'TitleSection' && <TitleSection data={data.props} author="KREADOAI" />}
+                    {key === 'TitleSectionWithImage' && <TitleSectionWithImage data={data.props} author="KREADOAI" />}
+                    {key === 'HowItWorksWithWorkflow' && <HowItWorksWithWorkflow data={data.props} author="KREADOAI" />}
+                    {key === 'HowItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks data={data.props} author="KREADOAI" />}
+                    {key === 'WhyChooseUsWithTwoBlocks' && <WhyChooseUsWithTwoBlocks data={data.props} author="KREADOAI" />}
+                    {key === 'WhyChooseUsWithSixBlocks' && <WhyChooseUsWithSixBlocks data={data.props} author="KREADOAI" />}
+                    {key === 'CallToActionWithTable' && <CallToActionWithTable data={data.props} author="KREADOAI" />}
+                    {key === 'CallToActionWithImage' && <CallToActionWithImage data={data.props} author="KREADOAI" />}
+                    {key === 'CallToAction' && <CallToAction data={data.props} author="KREADOAI" />}
+                    {key === 'ProductBenefitsWithFourBlocks' && <ProductBenefitsWithFourBlocks data={data.props} author="KREADOAI" />}
+                    {key === 'HeroSectionWithVideo' && <HeroSectionWithVideo data={data.props} author="KREADOAI" />}
+                    {key === 'Faqs' && <Faqs data={data.props} author="KREADOAI" />}
+                    {key === 'FaqTwoColumnsWithSmallTitle' && <FaqTwoColumnsWithSmallTitle data={data.props} author="KREADOAI" />}
+                    {key === 'FaqTwoColumnsWithBigTitle' && <FaqTwoColumnsWithBigTitle data={data.props} author="KREADOAI" />}
+                    {key === 'KeyResultsWithTextBlock' && <KeyResultsWithTextBlock data={data.props} author="KREADOAI" />}
+                    {key === 'MoreInsightsWithFourCards' && <MoreInsightsWithFourCards data={data.props} author="KREADOAI" />}
+                    {key === 'ImageBanner' && <ImageBanner data={data.props} author="KREADOAI" />}
+                    {key === 'TrustedByLogos' && <TrustedByLogos data={data.props} author="KREADOAI" />}
+                    {key === 'ProductComparisonTable' && <ProductComparisonTable data={data.props} author="KREADOAI" />}
+                    {key === 'PricingWithThreeCards' && <PricingWithThreeCards data={data.props} author="KREADOAI" />}
+                    {key === 'UserReviews' && <UserReviews data={data.props} author="KREADOAI" />}
+                    {key === 'UserReviewsMovingCards' && <UserReviewsMovingCards data={data.props} author="KREADOAI" />}
+                    {key === 'UserReviewsSquareCards' && <UserReviewsSquareCards data={data.props} author="KREADOAI" />}
+                    {key === 'KeyResultsWithThreeCards' && <KeyResultsWithThreeCards data={data.props} author="KREADOAI" />}
+                    {key === 'KeyResultsWithImage' && <KeyResultsWithImage data={data.props} author="KREADOAI" />}
                   </div>
                 </div>
               </div>
@@ -128,12 +148,12 @@ const ComponentShowcase = () => {
           ))}
         </div>
 
-        {/* Navigation Menu - 更新悬浮导航菜单样式 */}
+        {/* Navigation Menu - Update floating navigation menu style */}
         <div className="fixed bottom-6 right-6 z-50">
           {isNavOpen ? (
             <div className="bg-slate-800 rounded-lg shadow-lg p-3 w-[280px] border border-slate-700">
               <div className="flex justify-between items-center mb-2 pb-2 border-b border-slate-700">
-                <h3 className="font-medium text-slate-300 text-sm">组件导航</h3>
+                <h3 className="font-medium text-slate-300 text-sm">Navigation</h3>
                 <button
                   onClick={() => setIsNavOpen(false)}
                   className="text-slate-400 hover:text-slate-200"
