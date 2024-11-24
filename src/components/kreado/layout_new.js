@@ -11,7 +11,7 @@ import WhyChooseUsWithTwoHugeBlocks from '../common_components/why-choose-us-wit
 import WhyChooseUsWithSixSmallBlocks from '../common_components/why-choose-us-with-six-small-blocks';
 import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
 import ProductBenefitsWithFourBlocks from '../common_components/product-benefits-with-four-blocks';
-import CallToActionWithTable from '../common_components/call-to-action-with-a-table';
+import CallToActionWithTable from '../common_components/product-benefits-with-a-table';
 import Faqs from '../common_components/faqs';
 import ProductComparisonTable from '../common_components/product-comparison-table';
 import MoreInsightsWithFourCards from '../common_components/more-insights-with-four-cards';

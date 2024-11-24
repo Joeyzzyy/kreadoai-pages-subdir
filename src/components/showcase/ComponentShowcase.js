@@ -11,10 +11,10 @@ import PricingWithThreeCards from '../common_components/pricing-with-three-cards
 import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
 import WhyChooseUsWithSixBlocks from '../common_components/why-choose-us-with-six-small-blocks';
 import CallToAction from '../common_components/call-to-action';
-import CallToActionWithTable from '../common_components/call-to-action-with-a-table';
 import CallToActionWithImage from '../common_components/call-to-action-with-image';
 import HowItWorksWithThreeBlocks from '../common_components/how-it-works-with-three-blocks';
 import ProductBenefitsWithFourBlocks from '../common_components/product-benefits-with-four-blocks';
+import ProductBenefitsWithATable from '../common_components/product-benefits-with-a-table';
 import WhyChooseUsWithTwoBlocks from '../common_components/why-choose-us-with-two-huge-blocks';
 import HeroSectionWithVideo from '../common_components/hero-section-with-video';
 import Faqs from '../common_components/faqs';
@@ -122,10 +122,10 @@ const ComponentShowcase = () => {
                     {key === 'HowItWorksWithThreeBlocks' && <HowItWorksWithThreeBlocks data={data.props} author="KREADOAI" />}
                     {key === 'WhyChooseUsWithTwoBlocks' && <WhyChooseUsWithTwoBlocks data={data.props} author="KREADOAI" />}
                     {key === 'WhyChooseUsWithSixBlocks' && <WhyChooseUsWithSixBlocks data={data.props} author="KREADOAI" />}
-                    {key === 'CallToActionWithTable' && <CallToActionWithTable data={data.props} author="KREADOAI" />}
                     {key === 'CallToActionWithImage' && <CallToActionWithImage data={data.props} author="KREADOAI" />}
                     {key === 'CallToAction' && <CallToAction data={data.props} author="KREADOAI" />}
                     {key === 'ProductBenefitsWithFourBlocks' && <ProductBenefitsWithFourBlocks data={data.props} author="KREADOAI" />}
+                    {key === 'ProductBenefitsWithATable' && <ProductBenefitsWithATable data={data.props} author="KREADOAI" />}
                     {key === 'HeroSectionWithVideo' && <HeroSectionWithVideo data={data.props} author="KREADOAI" />}
                     {key === 'Faqs' && <Faqs data={data.props} author="KREADOAI" />}
                     {key === 'FaqTwoColumnsWithSmallTitle' && <FaqTwoColumnsWithSmallTitle data={data.props} author="KREADOAI" />}

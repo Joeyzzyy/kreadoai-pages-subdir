@@ -5,7 +5,7 @@ import CustomButton from './widget-custom_button';
 import authorStyles from '../../styles/textStyles';
 import buttonLinks from '../../config/buttonLinks';
 
-const CallToActionWithATable = ({ data, author }) => {
+const ProductBenefitsWithATable = ({ data, author }) => {
   const themes = {
     default: {
       bgColor: 'bg-white',
@@ -82,4 +82,4 @@ const CallToActionWithATable = ({ data, author }) => {
   );
 };
 
-export default CallToActionWithATable;
+export default ProductBenefitsWithATable;

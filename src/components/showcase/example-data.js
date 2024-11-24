@@ -8,6 +8,7 @@
  * 
  * 2. Feature & Benefits - Product features and advantages
  *    - productBenefitsWithFourBlocks
+ *    - productBenefitsWithATable
  *    - whyChooseUsWithSixBlocks
  *    - whyChooseUsWithTwoBlocksge
  * 
@@ -126,8 +127,47 @@ export const exampleData = {
     }
   },
 
-  WhyChooseUsWithSixBlocks: {
+  ProductBenefitsWithATable: {
     order: 5,
+    title: 'Product Benefits With A Table',
+    description: 'Display benefits list with right-side call to action',
+    recommendedPosition: 'Upper section, after other benefits sections',
+    filePath: 'src/components/common_components/product-benefits-with-a-table.js',
+    props: {
+      author: 'KREADO',
+      leftContent: [
+        {
+          icon: '🎥',
+          title: 'AI Video Creation',
+          content: 'Generate professional videos automatically'
+        },
+        {
+          icon: '🌍',
+          title: 'Global Reach',
+          content: 'Support for 40+ languages'
+        },
+        {
+          icon: '⚡',
+          title: 'Fast Processing',
+          content: 'Complete videos in minutes'
+        },
+        {
+          icon: '💰',
+          title: 'Cost Effective',
+          content: 'Save up to 90% on video production'
+        }
+      ],
+      rightContent: {
+        icon: '🚀',
+        title: 'Ready to Transform Your Video Marketing?',
+        subtitle: 'Join thousands of businesses using KREADO AI',
+        buttonText: 'Start Free Trial'
+      }
+    }
+  },
+
+  WhyChooseUsWithSixBlocks: {
+    order: 6,
     title: 'Why Choose Us With Six Blocks',
     description: 'Display product features or service advantages in six-grid layout',
     recommendedPosition: 'Upper-mid section, after benefits introduction',
@@ -175,7 +215,7 @@ export const exampleData = {
   },
 
   WhyChooseUsWithTwoBlocks: {
-    order: 6,
+    order: 7,
     title: 'Why Choose Us With Two Blocks',
     description: 'Display two main product features or service advantages with images',
     recommendedPosition: 'Mid section, after feature blocks',
@@ -204,7 +244,7 @@ export const exampleData = {
   },
 
   HowItWorksWithWorkflow: {
-    order: 7,
+    order: 8,
     title: 'How It Works With Workflow',
     description: 'Display product usage process or service steps with arrow indicators',
     recommendedPosition: 'Mid section, after features',
@@ -233,7 +273,7 @@ export const exampleData = {
   },
 
   HowItWorksWithThreeBlocks: {
-    order: 8,
+    order: 9,
     title: 'How It Works With Three Blocks',
     description: 'Display product workflow with three detailed feature blocks',
     recommendedPosition: 'Mid section, after workflow',
@@ -267,7 +307,7 @@ export const exampleData = {
   },
 
   ProductComparisonTable: {
-    order: 9,
+    order: 10,
     title: 'Product Comparison Table',
     description: 'Compare features between your product and competitors',
     recommendedPosition: 'Mid-lower section, before pricing',
@@ -315,7 +355,7 @@ export const exampleData = {
   },
 
   UserReviews: {
-    order: 10,
+    order: 11,
     title: 'User Reviews',
     description: 'Display user testimonials and feedback',
     recommendedPosition: 'Mid-lower section, after product comparison',
@@ -355,7 +395,7 @@ export const exampleData = {
   },
 
   UserReviewsMovingCards: {
-    order: 11,
+    order: 12,
     title: 'User Reviews Moving Cards',
     description: 'Animated user testimonials carousel display with enhanced visual effects',
     recommendedPosition: 'Mid-lower section, after product features',
@@ -397,7 +437,7 @@ export const exampleData = {
   },
 
   UserReviewsSquareCards: {
-    order: 12,
+    order: 13,
     title: 'User Reviews Square Cards',
     description: 'Three-column layout square user review cards with gradient star ratings',
     recommendedPosition: 'Mid-lower section, alternative to standard reviews',
@@ -445,7 +485,7 @@ export const exampleData = {
   },
 
   CallToActionWithTable: {
-    order: 13,
+    order: 14,
     title: 'Call To Action With Table',
     description: 'Display feature list with right-side call to action',
     recommendedPosition: 'Mid-lower section, after comparison',
@@ -484,7 +524,7 @@ export const exampleData = {
   },
 
   KeyResultsWithTextBlock: {
-    order: 14,
+    order: 15,
     title: 'Key Results With Text Block',
     description: 'Display article content with title and paragraphs',
     recommendedPosition: 'Content area, flexible positioning',
@@ -547,7 +587,7 @@ export const exampleData = {
   },
 
   KeyResultsWithThreeCards: {
-    order: 15,
+    order: 16,
     title: 'Key Results With Three Cards',
     description: 'Display competitor comparison data in three cards',
     recommendedPosition: 'Mid section, after features or case studies',
@@ -580,7 +620,7 @@ export const exampleData = {
   },
 
   KeyResultsWithImage: {
-    order: 16,
+    order: 17,
     title: 'Key Results With Image',
     description: 'Display key metrics with right-side image',
     recommendedPosition: 'Content area, flexible positioning',
@@ -604,7 +644,7 @@ export const exampleData = {
   },
 
   MoreInsightsWithFourCards: {
-    order: 17,
+    order: 18,
     title: 'More Insights With Four Cards',
     description: 'Display related articles or insights in card format',
     recommendedPosition: 'Lower section, after main content',
@@ -636,7 +676,7 @@ export const exampleData = {
   },
 
   ImageBanner: {
-    order: 18,
+    order: 19,
     title: 'Image Banner',
     description: 'Display full-width image banner',
     recommendedPosition: 'Flexible, used to break up text sections',
@@ -650,7 +690,7 @@ export const exampleData = {
   },
 
   Faqs: {
-    order: 19,
+    order: 20,
     title: 'FAQ Section',
     description: 'Display frequently asked questions in two columns',
     recommendedPosition: 'Lower section, before CTA',
@@ -680,7 +720,7 @@ export const exampleData = {
   },
 
   FaqTwoColumnsWithSmallTitle: {
-    order: 20,
+    order: 21,
     title: 'FAQ Two Columns With Small Title',
     description: 'Two-column FAQ section with left title and right expandable Q&A',
     recommendedPosition: 'Lower section, before pricing',
@@ -709,7 +749,7 @@ export const exampleData = {
   },
 
   FaqTwoColumnsWithBigTitle: {
-    order: 21,
+    order: 22,
     title: 'FAQ Two Columns With Big Title',
     description: 'Two-column FAQ section with left large title and right expandable Q&A',
     recommendedPosition: 'Lower section, before pricing',
@@ -738,7 +778,7 @@ export const exampleData = {
   },
 
   PricingWithThreeCards: {
-    order: 22,
+    order: 23,
     title: 'Pricing With Three Cards',
     description: 'Display pricing plans with feature comparison',
     recommendedPosition: 'Lower section, after FAQ and before final CTA',
@@ -794,7 +834,7 @@ export const exampleData = {
   },
 
   CallToAction: {
-    order: 23,
+    order: 24,
     title: 'Call To Action',
     description: 'Final call to action section with strong message',
     recommendedPosition: 'Must be the last component',
@@ -808,7 +848,7 @@ export const exampleData = {
   },
 
   CallToActionWithImage: {
-    order: 24,
+    order: 25,
     title: 'Call To Action With Image',
     description: 'Final call to action section with background image',
     recommendedPosition: 'Must be the last component',
@@ -825,7 +865,7 @@ export const exampleData = {
   },
 
   TrustedByLogos: {
-    order: 25,
+    order: 26,
     title: 'Trusted By Logos',
     description: 'Component to showcase partner/client logos in a carousel',
     recommendedPosition: 'Upper section, usually after Hero Section',
