@@ -14,7 +14,7 @@ const FAQs = ({ data, author }) => {
       </div>
 
       <div className="w-full md:w-[70%] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 md:gap-y-6 p-4 md:py-12">
-        {data.BottomContent.map((faq, index) => (
+        {data.contents.map((faq, index) => (
           <div key={index} className="pb-6">
             <h3 className={`${styles.h3.fontSize} ${styles.h3.fontWeight} ${styles.h3.color} mb-2`}>
               {faq.question}

@@ -361,7 +361,7 @@ export const exampleData = {
     recommendedPosition: 'Mid-lower section, after product comparison',
     filePath: 'src/components/common_components/user-reviews.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           name: "Sarah Chen",
           position: "Marketing Director - TechCorp",
@@ -401,7 +401,7 @@ export const exampleData = {
     recommendedPosition: 'Mid-lower section, after product features',
     filePath: 'src/components/common_components/user-reviews-moving-cards.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           name: "David Miller",
           position: "Innovation Director - FutureCorp",
@@ -443,7 +443,7 @@ export const exampleData = {
     recommendedPosition: 'Mid-lower section, alternative to standard reviews',
     filePath: 'src/components/common_components/user-reviews-square-cards.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           name: "Jennifer Lee",
           position: "Marketing VP - TechGrowth",
@@ -593,7 +593,7 @@ export const exampleData = {
     recommendedPosition: 'Mid section, after features or case studies',
     filePath: 'src/components/common_components/key-results-with-three-cards.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           competitorLogo: '/images/competitor1-logo.webp',
           competitorName: 'Traditional Video Production',
@@ -626,7 +626,7 @@ export const exampleData = {
     recommendedPosition: 'Content area, flexible positioning',
     filePath: 'src/components/common_components/key-results-with-image.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           percentage: 95,
           description: 'Customer Satisfaction Score, based on over 10,000 user feedbacks'
@@ -650,28 +650,28 @@ export const exampleData = {
     recommendedPosition: 'Lower section, after main content',
     filePath: 'src/components/common_components/more_insights_with_four_cards.js',
     props: {
-        TopContent: [
-          {
-            imageUrl: '/images/kreado-demo-pic1.webp',
-            subTitle: 'AI TECHNOLOGY',
-            title: 'The Future of Video Marketing'
-          },
-          {
-            imageUrl: '/images/kreado-demo-pic2.webp',
-            subTitle: 'CASE STUDY',
-            title: 'Success Stories with AI Videos'
-          },
-          {
-            imageUrl: '/images/kreado-demo-pic1.webp',
-            subTitle: 'TUTORIAL',
-            title: 'Getting Started with KREADO AI'
-          },
-          {
-            imageUrl: '/images/kreado-demo-pic2.webp',
-            subTitle: 'INDUSTRY NEWS',
-            title: 'Latest Trends in AI Marketing'
-          }
-        ]
+      bottomContent: [
+        {
+          imageUrl: '/images/kreado-demo-pic1.webp',
+          subTitle: 'AI TECHNOLOGY',
+          title: 'The Future of Video Marketing'
+        },
+        {
+          imageUrl: '/images/kreado-demo-pic2.webp',
+          subTitle: 'CASE STUDY',
+          title: 'Success Stories with AI Videos'
+        },
+        {
+          imageUrl: '/images/kreado-demo-pic1.webp',
+          subTitle: 'TUTORIAL',
+          title: 'Getting Started with KREADO AI'
+        },
+        {
+          imageUrl: '/images/kreado-demo-pic2.webp',
+          subTitle: 'INDUSTRY NEWS',
+          title: 'Latest Trends in AI Marketing'
+        }
+      ]
     }
   },
 
@@ -698,7 +698,7 @@ export const exampleData = {
     props: {
       author: 'KREADO',
       title: 'Frequently Asked Questions',
-      BottomContent: [
+      contents: [
         {
           question: 'How does AI video creation work?',
           answer: 'Our AI analyzes your input text and automatically generates matching visuals, animations, and voiceovers to create professional videos.'
@@ -727,7 +727,7 @@ export const exampleData = {
     filePath: 'src/components/common_components/faq-two-columns-with-small-title.js',
     props: {
       author: 'KREADO',
-      BottomContent: [
+      bottomContent: [
         {
           question: 'How does the AI video creation process work?',
           answer: 'Our AI technology analyzes your input content and automatically generates professional videos by selecting appropriate visuals, animations, and transitions. The process is fully automated and typically takes just minutes.'
@@ -756,7 +756,7 @@ export const exampleData = {
     filePath: 'src/components/common_components/faq-two-columns-with-big-title.js',
     props: {
       author: 'KREADO',
-      BottomContent: [
+      bottomContent: [
         {
           question: 'What is KREADO AI Video Generator?',
           answer: 'KREADO AI is an advanced platform that automatically transforms your text content into professional marketing videos using artificial intelligence technology.'
@@ -871,7 +871,7 @@ export const exampleData = {
     recommendedPosition: 'Upper section, usually after Hero Section',
     filePath: 'src/components/common_components/trusted-by-logos.js',
     props: {
-      BottomContent: [
+      bottomContent: [
         {
           imageUrl: '/images/partner-logo1.webp',
           altText: 'Partner Company 1'

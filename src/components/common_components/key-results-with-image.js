@@ -2,7 +2,7 @@
 import React from 'react';
 
 const KeyResultsWithImage = ({ data }) => {
-  const comparisons = data.BottomContent;
+  const comparisons = data.bottomContent;
   return (
     <div className="py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4">

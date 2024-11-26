@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const MoreInsightsWithFourCards = ({ data }) => {
-  const insights = data.TopContent;
+  const insights = data.bottomContent;
 
   return (
     <div className="more-insights my-16 container mx-auto px-4">
