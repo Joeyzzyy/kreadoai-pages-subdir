@@ -1,28 +1,24 @@
 "use client";
 import React from 'react';
 
-import TableOfContents from '../common_components/widget-table_of_contents';
-
-import HeroSectionWithVideo from '../common_components/hero-section-with-video';
-import TextBlock from '../common_components/key-results-with-text-block';
-import CallToAction from '../common_components/call-to-action-with-image';
-import HowItWorksWithThreeBlocks from '../common_components/how-it-works-with-three-blocks';
-import WhyChooseUsWithTwoHugeBlocks from '../common_components/why-choose-us-with-two-huge-blocks';
-import WhyChooseUsWithSixSmallBlocks from '../common_components/why-choose-us-with-six-small-blocks';
-import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
-import ProductBenefitsWithFourBlocks from '../common_components/product-benefits-with-four-blocks';
-import CallToActionWithTable from '../common_components/product-benefits-with-a-table';
-import Faqs from '../common_components/faqs';
-import ProductComparisonTable from '../common_components/product-comparison-table';
-import MoreInsightsWithFourCards from '../common_components/more-insights-with-four-cards';
-import ImageBanner from '../common_components/image-banner';
+import HeroSectionWithVideo from '../../common/sections/hero-section-with-video';
+import CallToAction from '../../common/sections/call-to-action';
+import HowItWorksWithThreeBlocks from '../../common/sections/how-it-works-with-three-blocks';
+import WhyChooseUsWithTwoHugeBlocks from '../../common/sections/why-choose-us-with-two-huge-blocks';
+import WhyChooseUsWithSixSmallBlocks from '../../common/sections/why-choose-us-with-six-small-blocks';
+import HowItWorksWithWorkflow from '../../common/sections/how-it-works-with-workflow';
+import ProductBenefitsWithFourBlocks from '../../common/sections/product-benefits-with-four-blocks';
+import Faqs from '../../common/sections/faqs';
+import ProductComparisonTable from '../../common/sections/product-comparison-table';
+import MoreInsightsWithFourCards from '../../common/sections/more-insights-with-four-cards';
+import ImageBanner from '../../common/sections/image-banner';
+import TitleSection from '../../common/sections/title-section';
+import TitleSectionWithImage from '../../common/sections/title-section-with-image';
 
 // 更新组件映射表
 const COMPONENT_MAP = {
-  TextBlock: TextBlock,
   CallToAction: CallToAction,
   Faqs: Faqs,
-  CallToActionWithTable: CallToActionWithTable,
   HowItWorksWithThreeBlocks: HowItWorksWithThreeBlocks,
   ProductBenefitsWithFourBlocks: ProductBenefitsWithFourBlocks,
   HowItWorksWithWorkflow: HowItWorksWithWorkflow,
@@ -31,7 +27,9 @@ const COMPONENT_MAP = {
   MoreInsightsWithFourCards: MoreInsightsWithFourCards,
   ImageBanner: ImageBanner,
   ProductComparisonTable: ProductComparisonTable,
-  HeroSectionWithVideo: HeroSectionWithVideo
+  HeroSectionWithVideo: HeroSectionWithVideo,
+  TitleSection: TitleSection,
+  TitleSectionWithImage: TitleSectionWithImage
 };
 
 const LayoutKoreadoai = ({ article, keywords }) => {
