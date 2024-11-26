@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import buttonLinks from '../../config/buttonLinks';
+import buttonLinks from '../../ui/button/links';
 import CustomButton from './widget-custom_button';
 
 const HowItWorksWithThreeBlocks = ({ data, author }) => {

@@ -50,6 +50,7 @@ const LayoutKoreadoai = ({ article, keywords }) => {
       key={`${section.componentName}-${section.position}`} 
       section={section}
       author={author}
+      date={article.createdAt}
     />;
   };
 

@@ -1,9 +1,8 @@
 "use client";
 import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from 'next/image';
-import '../../styles/globals.css'
+import '../../../styles/globals.css'
 
 const menuItems = [
     {
@@ -209,13 +208,26 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const Navigation = () => {
-  const pathname = usePathname();
+export const Navigation = ({ theme = 'light' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
   const [mobileSubmenu, setMobileSubmenu] = useState(null);
+
+  // 添加主题相关的样式配置
+  const themeStyles = {
+    light: {
+      text: 'text-gray-900',
+      hoverText: 'hover:text-blue-600',
+      mobileText: 'text-gray-900',
+    },
+    dark: {
+      text: 'text-white',
+      hoverText: 'hover:text-blue-300',
+      mobileText: 'text-white',
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -289,8 +301,8 @@ export const Navigation = () => {
                     }}
                     className={`text-[15px] font-medium transition-all duration-300 flex items-center ${
                       hasScrolled || activeDropdown
-                        ? 'text-gray-900 hover:text-blue-600'
-                        : 'text-white hover:text-blue-300'
+                        ? themeStyles.light.text + ' ' + themeStyles.light.hoverText
+                        : themeStyles[theme].text + ' ' + themeStyles[theme].hoverText
                     }`}
                   >
                     {item.label}
@@ -473,7 +485,9 @@ export const Navigation = () => {
             <Link
               href="https://www.kreadoai.com/ai/workbench"
               className={`text-base transition duration-300 ${
-                hasScrolled || activeDropdown ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-300'
+                hasScrolled || activeDropdown 
+                  ? themeStyles.light.text + ' ' + themeStyles.light.hoverText
+                  : themeStyles[theme].text + ' ' + themeStyles[theme].hoverText
               }`}
             >
               Home
@@ -485,7 +499,7 @@ export const Navigation = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${
-                hasScrolled ? 'text-gray-900' : 'text-white'
+                hasScrolled ? themeStyles.light.text : themeStyles[theme].text
               }`}
             >
               <span className="sr-only">Open menu</span>
@@ -562,22 +576,23 @@ export const Navigation = () => {
                                     {updateItem.items.map((rowItem, rowIndex) => (
                                       <Fragment key={rowIndex}>
                                         <a 
+                                          key={`${rowIndex}-${rowItem.title}`}  // 添加更具体的 key
                                           href={rowItem.href} 
                                           className="text-sm text-gray-600/90 hover:text-blue-600 transition-colors duration-200 flex items-center"
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                        >
+                                      >
                                           {rowItem.title === "HelpCenter" && (
-                                            <span className="mr-2">🎯</span>
+                                              <span className="mr-2">�</span>
                                           )}
                                           {rowItem.title === "Email" && (
-                                            <span className="mr-2">✉️</span>
+                                              <span className="mr-2">✉️</span>
                                           )}
                                           {rowItem.title}
-                                        </a>
-                                        {rowIndex === 0 && (
-                                          <div className="h-4 w-px bg-gray-200"></div>
-                                        )}
+                                      </a>
+                                      {rowIndex === 0 && (
+                                          <div key={`divider-${rowIndex}`} className="h-4 w-px bg-gray-200"></div>  // 添加 key
+                                      )}
                                       </Fragment>
                                     ))}
                                   </div>
@@ -653,6 +668,6 @@ export const Navigation = () => {
   );
 };
 
-export const KreadoHeader = () => {
-  return <Navigation />;
+export const KreadoHeader = ({ theme = 'light' }) => {
+  return <Navigation theme={theme} />;
 };

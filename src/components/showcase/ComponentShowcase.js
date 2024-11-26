@@ -5,34 +5,34 @@ import { exampleData } from './example-data';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { github } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-import TitleSection from '../common_components/title-section';
-import TitleSectionWithImage from '../common_components/title-section-with-image.js';
-import PricingWithThreeCards from '../common_components/pricing-with-three-cards';
-import HowItWorksWithWorkflow from '../common_components/how-it-works-with-workflow';
-import WhyChooseUsWithSixBlocks from '../common_components/why-choose-us-with-six-small-blocks';
-import CallToAction from '../common_components/call-to-action';
-import CallToActionWithImage from '../common_components/call-to-action-with-image';
-import HowItWorksWithThreeBlocks from '../common_components/how-it-works-with-three-blocks';
-import ProductBenefitsWithFourBlocks from '../common_components/product-benefits-with-four-blocks';
-import ProductBenefitsWithATable from '../common_components/product-benefits-with-a-table';
-import WhyChooseUsWithTwoBlocks from '../common_components/why-choose-us-with-two-huge-blocks';
-import HeroSectionWithVideo from '../common_components/hero-section-with-video';
-import Faqs from '../common_components/faqs';
-import FaqTwoColumnsWithSmallTitle from '../common_components/faq-two-columns-with-small-title';
-import FaqTwoColumnsWithBigTitle from '../common_components/faq-two-columns-with-big-title';
-import ImageBanner from '../common_components/image-banner';
-import ProductComparisonTable from '../common_components/product-comparison-table';
-import KeyResultsWithTextBlock from '../common_components/key-results-with-text-block';
-import MoreInsightsWithFourCards from '../common_components/more-insights-with-four-cards';
-import TrustedByLogos from '../common_components/trusted-by-logos';
-import UserReviews from '../common_components/user-reviews';
-import UserReviewsMovingCards from '../common_components/user-reviews-with-moving-cards';
-import UserReviewsSquareCards from '../common_components/user-reviews-with-square-cards';
-import KeyResultsWithThreeCards from '../common_components/key-results-with-three-cards';
-import KeyResultsWithImage from '../common_components/key-results-with-image.js';
+import TitleSection from '../common/sections/title-section';
+import TitleSectionWithImage from '../common/sections/title-section-with-image';
+import PricingWithThreeCards from '../common/sections/pricing-with-three-cards';
+import HowItWorksWithWorkflow from '../common/sections/how-it-works-with-workflow';
+import WhyChooseUsWithSixBlocks from '../common/sections/why-choose-us-with-six-small-blocks';
+import CallToAction from '../common/sections/call-to-action';
+import CallToActionWithImage from '../common/sections/call-to-action-with-image';
+import HowItWorksWithThreeBlocks from '../common/sections/how-it-works-with-three-blocks';
+import ProductBenefitsWithFourBlocks from '../common/sections/product-benefits-with-four-blocks';
+import ProductBenefitsWithATable from '../common/sections/product-benefits-with-a-table';
+import WhyChooseUsWithTwoBlocks from '../common/sections/why-choose-us-with-two-huge-blocks';
+import HeroSectionWithVideo from '../common/sections/hero-section-with-video';
+import Faqs from '../common/sections/faqs';
+import FaqTwoColumnsWithSmallTitle from '../common/sections/faq-two-columns-with-small-title';
+import FaqTwoColumnsWithBigTitle from '../common/sections/faq-two-columns-with-big-title';
+import ImageBanner from '../common/sections/image-banner';
+import ProductComparisonTable from '../common/sections/product-comparison-table';
+import KeyResultsWithTextBlock from '../common/sections/key-results-with-text-block';
+import MoreInsightsWithFourCards from '../common/sections/more-insights-with-four-cards';
+import TrustedByLogos from '../common/sections/trusted-by-logos';
+import UserReviews from '../common/sections/user-reviews';
+import UserReviewsMovingCards from '../common/sections/user-reviews-with-moving-cards';
+import UserReviewsSquareCards from '../common/sections/user-reviews-with-square-cards';
+import KeyResultsWithThreeCards from '../common/sections/key-results-with-three-cards';
+import KeyResultsWithImage from '../common/sections/key-results-with-image';
 
-import { KreadoHeader } from '../kreado/header_new';
-import { KreadoFooter } from '../kreado/footer_new';
+import { KreadoHeader } from '../layouts/kreado/header';
+import { KreadoFooter } from '../layouts/kreado/footer';
 
 const ComponentShowcase = () => {
   const [expandedCodes, setExpandedCodes] = useState({});
@@ -53,7 +53,7 @@ const ComponentShowcase = () => {
 
   return (
     <>
-      <KreadoHeader />
+      <KreadoHeader theme="dark" />
       <div className="relative min-h-screen bg-slate-900 w-full pt-[4.2rem]">
         {/* Header */}
         <div className="bg-slate-800 border-b border-slate-700 w-full">

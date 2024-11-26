@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import authorStyles from '../../styles/textStyles';
+import authorStyles from '../../../styles/textStyles';
 
-const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
+const FAQTwoColumnsWithBigTitle = ({ data, author }) => {
   const styles = authorStyles[author];
   
   // 添加展开/收起状态控制
@@ -13,16 +13,16 @@ const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
   };
 
   return (
-    <div className="flex justify-center bg-white py-8 md:py-12">
-      <div className="w-[95%] md:w-[70%] flex flex-col md:flex-row items-start gap-8">
+    <div className="flex justify-center bg-white py-8 md:py-12 px-4 md:px-8">
+      <div className="w-full md:w-[70%] flex flex-col md:flex-row items-start gap-8">
         {/* 左侧标题区域 */}
         <div className="w-full md:w-1/3">
-          <span className="inline-block px-4 py-1 bg-blue-50 text-blue-900 rounded-full text-sm mb-4">
-            FAQ
-          </span>
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Frequently asked questions
+          <h2 className="text-7xl font-bold mb-4 text-black">
+            FAQs
           </h2>
+          <p className="text-lg text-black mb-4">
+            AI-powered video creation made simple
+          </p>
         </div>
 
         {/* 右侧FAQ列表 */}
@@ -30,18 +30,19 @@ const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
           {data.bottomContent.map((faq, index) => (
             <div 
               key={index} 
-              className="mb-4 bg-blue-50/50 rounded-lg overflow-hidden"
+              className="mb-4 border-b border-gray-200 pb-4"
             >
               <button
-                className="w-full px-6 py-5 flex justify-between items-center text-left"
+                className="w-full py-5 flex justify-between items-center text-left"
                 onClick={() => toggleFAQ(index)}
               >
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-black flex items-center">
+                  <span className="mr-2">{index + 1}.</span>
                   {faq.question}
                 </h3>
                 <svg
-                  className={`w-6 h-6 transform transition-transform ${
-                    openIndex === index ? 'rotate-180' : 'rotate-90'
+                  className={`w-6 h-6 transform transition-transform duration-300 ${
+                    openIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -56,14 +57,14 @@ const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
                 </svg>
               </button>
               <div 
-                className={`transition-all duration-300 ease-in-out ${
-                  openIndex === index 
-                    ? 'max-h-[500px] opacity-100' 
-                    : 'max-h-0 opacity-0'
-                }`}
+                className={`transform-gpu overflow-hidden transition-all duration-300 ease-out
+                  ${openIndex === index 
+                    ? 'h-auto scale-y-100 opacity-100' 
+                    : 'h-0 scale-y-95 opacity-0'
+                  }`}
               >
-                <div className="px-6 pb-5">
-                  <p className="text-gray-700">
+                <div className="pb-5">
+                  <p className="text-gray-500">
                     {faq.answer}
                   </p>
                 </div>
@@ -76,4 +77,4 @@ const FAQTwoColumnsWithSmallTitle = ({ data, author }) => {
   );
 };
 
-export default FAQTwoColumnsWithSmallTitle;
+export default FAQTwoColumnsWithBigTitle;

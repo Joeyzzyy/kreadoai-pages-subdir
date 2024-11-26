@@ -1,28 +1,11 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { checkImage } from '../../utils/imageUtils';
+import React, { useState } from 'react';
 import CustomButton from './widget-custom_button';
-import authorStyles from '../../styles/textStyles';
-import buttonLinks from '../../config/buttonLinks';
+import authorStyles from '../../../styles/textStyles';
+import buttonLinks from '../../ui/button/links';
 
 const WhyChooseUsWithTwoHugeBlocks = ({ data, author }) => {
   const styles = authorStyles[author];
-
-  const [validImages, setValidImages] = useState({});
-
-  useEffect(() => {
-    const validateImages = async () => {
-      const imageValidations = {};
-      for (const content of data.bottomContent) {
-        if (content.image) {
-          const isValid = await checkImage(content.image);
-          imageValidations[content.image] = isValid;
-        }
-      }
-      setValidImages(imageValidations);
-    };
-    validateImages();
-  }, [data.bottomContent]);
 
   // 获取图片源地址
   const getImageSrc = (imagePath, index) => {
