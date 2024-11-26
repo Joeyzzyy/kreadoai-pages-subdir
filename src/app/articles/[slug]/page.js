@@ -1,13 +1,10 @@
-import { getArticleBySlug, getAllArticles } from '../../../lib/api';
+import { getArticleBySlug } from '../../../lib/api';
 import { notFound } from 'next/navigation';
-import LayoutKreadoai from '../../../components/kreado/layout_new';
-import { KreadoHeader } from '../../../components/kreado/header_new';
-import { KreadoFooter } from '../../../components/kreado/footer_new';
+import LayoutKreadoai from '../../../components/layouts/kreado/layout';
+import { KreadoHeader } from '../../../components/layouts/kreado/header';
+import { KreadoFooter } from '../../../components/layouts/kreado/footer';
 import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-// 在文件顶部添加调试日志
-console.log('Loading page.js file');
 
 // 添加这个配置来启用动态路由
 export const dynamic = 'force-dynamic'
